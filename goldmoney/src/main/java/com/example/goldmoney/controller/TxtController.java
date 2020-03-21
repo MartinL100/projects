@@ -2,12 +2,15 @@ package com.example.goldmoney.controller;
 
 import com.baidu.ueditor.ActionEnter;
 import com.example.goldmoney.bean.TxtBean;
-import com.example.goldmoney.service.impl.TxtService;
+import com.example.goldmoney.service.ITxtService;
+import com.example.goldmoney.param.TxtLevel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.util.ClassUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -19,23 +22,38 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-
-@Controller
+@PropertySource({"classpath:application.properties"})
+@RestController
 public class TxtController {
-    @RequestMapping("/txt")
-    public String txt(){
-        return "ueditor/index.html";
+    @Autowired
+    ITxtService txtService;
+    @Value("${img.path}")
+    private String imgPath;
+    @RequestMapping("/getHotTxt")
+    public List<TxtBean> getHotTxt(){
+        TxtBean txtBean = new TxtBean();
+        txtBean.setTxtLevel(TxtLevel.LV_2);
+        return txtService.findTxt(txtBean);
+    }
+
+    @RequestMapping("/addTxt")
+    public void addTxt(TxtBean txtBean){
+        txtService.addTxt(txtBean);
+    }
+
+    @RequestMapping("/getTxt")
+    public TxtBean findTxtById(TxtBean txtBean){
+        return txtService.findTxt(txtBean).get(0);
     }
 
 
 
 
-
-
     @RequestMapping(value="/config")
-    @ResponseBody
+
     public Object config(HttpServletRequest request, HttpServletResponse response) {
 
         response.setContentType("application/json");
@@ -44,8 +62,7 @@ public class TxtController {
         //图片、文件、视频上传
         if(actionName.equals("uploadImg") || actionName.equals("uploadvideo")|| actionName.equals("uploadfile")){
 //            String uploadPath = ClassUtils.getDefaultClassLoader().getResource("static").getPath();
-            String uploadPath = "E:/upload";
-            uploadPath = uploadPath+"/img/" ;
+            String uploadPath = imgPath;
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
             String date = sdf.format(new Date());
             String path = uploadPath + date ;

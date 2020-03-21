@@ -141,7 +141,7 @@ a:hover,.yl a:hover{ color:#008fd8;}
 .s_m .s_mb span{ color:#E0363B;}
 .bg_e{ width:100%; min-width:1200px; background:#DDDEDE; background-size:cover;}
 .ys_l{ width:1200px; margin:0px auto; padding:20px 0 0;}
-.ys_l li{ width:320px; float:left; text-align:center; margin-right:62px;}
+.ys_l li{ width:25%; float:left; text-align:center; margin-right:62px;}
 .ys_l li b{ display:block; width:100%; height:60px; line-height:60px; font-size:19px; color:#333; white-space:nowrap;}
 .ys_l li .ctn{ width:100%; height:90px; overflow:hidden; line-height:160%; color:#666; text-align:center; font-size:14px;}
 .ys_l li .ctn em{ color:#D11519;}
@@ -1026,7 +1026,7 @@ a:hover,.yl a:hover{ color:#008fd8;}
 .i_f ul{ width:100%; border-top:1px solid #ddd; border-right:1px solid #ddd; background:#FFF;}
 .i_f ul li{ width:399px; float:left; border-left:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center; padding:25px 0 20px;}
 .i_f ul li img{ width:110px; height:110px; vertical-align:top;}
-.i_f ul li .title{ font-size:20px; color:#008fd8; font-weight:600;}
+.i_f ul li .title{ font-size:20px; color:orange; font-weight:600;}
 .i_f ul li p{ font-size:16px; color:#6D6D6D; line-height:155%;}
 .i_g{ padding-bottom:30px; padding-top:30px;}
 .i_g .i_name{ width:100%; height:50px; position:relative; text-align:center;}

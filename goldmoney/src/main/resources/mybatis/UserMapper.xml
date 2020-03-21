@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.goldmoney.dao.IUserDao">
+
+        <sql id="query">
+            <where>
+                <if test="userId !=null and userId !=''">
+                    and user_id=#{userId}
+                </if>
+                <if test="userName !=null and userName !=''">
+                    and user_name=#{userName}
+                </if>
+                <if test="pwd !=null and pwd !=''">
+                    and pwd=#{pwd}
+                </if>
+                <if test="lv !=null and lv !=''">
+                    and lv=#{lv}
+                </if>
+                <if test="lstLogTime !=null and lstLogTime !=''">
+                    and lst_log_time=#{lstLogTime}
+                </if>
+                <if test="tel !=null and tel !=''">
+                    and tel=#{tel}
+                </if>
+                <if test="relName !=null and relName !=''">
+                    and rel_name=#{relName}
+                </if>
+            </where>
+        </sql>
+
+    <select id="findUser" parameterType="UserBean" resultType="UserBean">
+
+        SELECT
+  user_id,
+  user_name,
+  pwd,
+  lv,
+  lst_log_time,
+  tel,
+  rel_name
+    FROM t_user
+    <include refid="query"></include>
+    </select>
+
+    <select id="findUserByUserName" parameterType="UserBean" resultType="UserBean">
+             SELECT
+  user_id,
+  user_name,
+  pwd,
+  lv,
+  lst_log_time,
+  tel,
+  rel_name
+    FROM t_user
+    where user_name=#{userName} and  pwd=#{pwd}
+    </select>
+    <select id="findUserByTel" parameterType="UserBean" resultType="UserBean">
+             SELECT
+  user_id,
+  user_name,
+  pwd,
+  lv,
+  lst_log_time,
+  tel,
+  rel_name
+    FROM t_user
+    where tel=#{userName} and  pwd=#{pwd}
+    </select>
+</mapper>

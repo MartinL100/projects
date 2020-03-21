@@ -8,4 +8,14 @@ import java.util.List;
 public interface ITxtDao {
 
     List<TxtBean> findTxt(TxtBean txtBean);
+
+    void addTxt(TxtBean txtBean);
+
+    List<TxtBean> findTxtCommon(TxtBean txtBean);
+
+    int countCommon(TxtBean txtBean);
+
+    void updateTxtLv(TxtBean txtBean);
+
+
 }

@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.goldmoney.dao.ITxtDao">
-    <select id="findTxt" resultType="TxtBean">
-        SELECT * FROM t_txt
+
+    <sql id="query">
+        <where>
+            <if test="txtId !=null and txtId!=''">
+            and  txt_id = #{txtId}
+            </if>
+            <if test="txtLevel !=null and txtLevel!=''">
+                and  txt_level = #{txtLevel}
+            </if>
+            <if test="txtType !=null and txtType!=''">
+                and  txt_type = #{txtType}
+            </if>
+            <if test="content !=null and content!=''">
+                and  content = #{content}
+            </if>
+            <if test="title !=null and title!=''">
+                and  title = #{title}
+            </if>
+        </where>
+
+    </sql>
+
+
+    <select id="findTxt" parameterType="TxtBean" resultType="TxtBean">
+        SELECT * FROM t_txt t
+        <include refid="query"></include>
+        order by t.lst_mod_time desc
     </select>
+    <select id="findTxtCommon" parameterType="TxtBean" resultType="TxtBean">
+        SELECT
+            t.txt_id
+            ,t.title
+            ,t.lst_mod_time
+            ,t.txt_level
+            ,t.txt_type
+        FROM t_txt t
+        <include refid="query"></include>
+        order by t.lst_mod_time desc
+        <if test="page!=null and page!='0'.toString">
+            limit #{index},#{limit}
+        </if>
+
+    </select>
+    <select id="countCommon" parameterType="TxtBean" resultType="Integer">
+        SELECT
+        count(t.txt_id)
+        FROM t_txt t
+        <include refid="query"></include>
+    </select>
+
+    <insert id="addTxt" parameterType="TxtBean">
+        INSERT INTO t_txt (txt_id,txt_level,txt_type,content,title,lst_mod_time)
+                VALUES(#{txtId},#{txtLevel},#{txtType},#{content},#{title},#{lstModTime})
+    </insert>
+
+<update id="updateTxtLv" parameterType="TxtBean">
+   UPDATE t_txt t SET t.txt_level = #{txtLevel}
+                    where t.txt_id = #{txtId}
+</update>
 </mapper>
