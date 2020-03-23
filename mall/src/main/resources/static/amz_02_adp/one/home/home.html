@@ -387,7 +387,7 @@
                             var json = JSON.parse(request.responseText);
                             for (var key in json) {
                                 if(json[key].type=='护肤'){
-                                    str1+="<dd><a title='"+json[key].value+"' href='introduction.html'><span>"+json[key].value+"</span></a></dd>"
+                                    str1+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
                                 }
 
                             }
