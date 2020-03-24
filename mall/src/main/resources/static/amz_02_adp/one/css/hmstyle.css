@@ -521,8 +521,8 @@ top: 11px;text-align: right;}
 .floodFour .text-two .outer-con ,.floodFour .text-three .outer-con {top:auto;left:5%;width:90%;bottom:10px ;}
 
 /*楼层颜色*/
-#f1 .list {background:#6bdea7;}
-#f1 .list .triangle-topright{width: 0;height: 0;border-top: 30px solid #68937f;position: absolute;bottom:0px;border-left: 30px solid #fff}
+#f1 .list {background: #cfe2f1;}
+#f1 .list .triangle-topright{width: 0;height: 0;border-top: 30px solid #cfe2f1;position: absolute;bottom:0px;border-left: 30px solid #fff}
 
 #f2 .list {background:#ff9229;border:none ;}
 #f2 .list .triangle-topright{width: 0;height: 0;border-top: 30px solid #d17b28;position: absolute;bottom:0px;border-left: 30px solid #fff}
