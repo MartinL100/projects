@@ -1,5 +1,6 @@
 package com.example.goldmoney.dao;
 
+
 import com.example.goldmoney.bean.UserBean;
 import org.apache.ibatis.annotations.Mapper;
 

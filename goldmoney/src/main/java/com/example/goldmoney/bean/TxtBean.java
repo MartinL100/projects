@@ -1,7 +1,5 @@
 package com.example.goldmoney.bean;
 
-import java.sql.Timestamp;
-
 public class TxtBean  extends pageParentBean{
 
     private String txtId;

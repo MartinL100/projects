@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cbat.starsymbol.dao.ISelectDao">
+
+        <sql id="query">
+            <where>
+                <if test="slName!=null and slName!=''">
+                    and s.sl_name = #{slName}
+                </if>
+                <if test="slCd!=null and slCd!=''">
+                    and s.sl_cd = #{slCd}
+                </if>
+                <if test="slValue!=null and slValue!=''">
+                    and s.sl_value = #{slValue}
+                </if>
+            </where>
+        </sql>
+
+    <select id="findSelectKey" parameterType="SelectBean" resultType="SelectBean">
+      SELECT s.sl_key FROM t_select s
+      <include refid="query"></include>
+
+    </select>
+</mapper>

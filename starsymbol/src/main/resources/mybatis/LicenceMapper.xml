@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cbat.starsymbol.dao.ILicenseDao">
+
+    <sql id="query">
+        <where>
+            <if test="licId !=null and licId!=''">
+            and  lic_id = #{licId}
+            </if>
+            <if test="licType !=null and licType!=''">
+                and  lic_type = #{licType}
+            </if>
+            <if test="licName !=null and licName!=''">
+                and  lic_name = #{licName}
+            </if>
+            <if test="licNickName !=null and licNickName!=''">
+                and  lic_nick_name = #{licNickName}
+            </if>
+            <if test="licDepartment !=null and licDepartment!=''">
+                and  lic_department = #{licDepartment}
+            </if>
+            <if test="licLeve !=null and licLeve!=''">
+                and  lic_leve = #{licLeve}
+            </if>
+        </where>
+
+    </sql>
+
+
+    <sql id="update">
+        <set>
+            <if test="licType !=null and licType!=''">
+                  lic_type = #{licType},
+            </if>
+            <if test="licName !=null and licName!=''">
+                  lic_name = #{licName},
+            </if>
+            <if test="licNickName !=null and licNickName!=''">
+                  lic_nick_name = #{licNickName},
+            </if>
+            <if test="licDepartment !=null and licDepartment!=''">
+                  lic_department = #{licDepartment},
+            </if>
+            <if test="licLeve !=null and licLeve!=''">
+                  lic_leve = #{licLeve},
+            </if>
+        </set>
+    </sql>
+
+
+    <select id="findLicList" parameterType="LicenceBean" resultType="LicenceBean">
+        SELECT * FROM t_license t
+        <include refid="query"></include>
+        order by t.lst_mod_time desc
+        <if test="page!=null and page!='0'.toString">
+            limit #{index},#{limit}
+        </if>
+    </select>
+
+
+    <select id="countLic" parameterType="LicenceBean" resultType="Integer">
+        SELECT
+        count(t.lic_id)
+        FROM t_license t
+        <include refid="query"></include>
+    </select>
+
+    <insert id="addLic" parameterType="LicenceBean">
+       INSERT INTO `db01`.`t_license`
+            (`lic_id`,
+             `lic_type`,
+             `lic_name`,
+             `lic_nick_name`,
+             `lic_department`,
+             `life_cycle`,
+             `check_time`,
+             `check_require`,
+             `business`,
+             `lic_leve`,
+             `lic_note`,
+             `lst_mod_time`)
+VALUES (#{licId},
+        #{licType},
+        #{licName},
+        #{licNickName},
+        #{licDepartment},
+        #{lifeCycle},
+        #{checkTime},
+        #{checkRequire},
+        #{business},
+        #{licLeve},
+        #{licNote},
+        #{lstModTime});
+    </insert>
+
+    <update id="updateLic" parameterType="LicenceBean">
+        UPDATE `t_license`
+              <include refid="update"></include>
+        WHERE `lic_id` = #{licId}
+    </update>
+
+    <delete id="delLic" parameterType="LicenceBean">
+            WHERE DELETE
+            FROM `db01`.`t_license`
+            WHERE `lic_id` = #{licId}
+    </delete>
+</mapper>
