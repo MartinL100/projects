@@ -2,13 +2,12 @@ package com.example.goldmoney.controller;
 
 import com.baidu.ueditor.ActionEnter;
 import com.example.goldmoney.bean.TxtBean;
-import com.example.goldmoney.service.ITxtService;
 import com.example.goldmoney.param.TxtLevel;
+import com.example.goldmoney.service.ITxtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.util.ClassUtils;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;

@@ -1,10 +1,14 @@
 package com.example.goldmoney.controller;
 
+
+
 import com.example.goldmoney.bean.PageQueryBean;
 import com.example.goldmoney.bean.TxtBean;
 import com.example.goldmoney.service.ITxtService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

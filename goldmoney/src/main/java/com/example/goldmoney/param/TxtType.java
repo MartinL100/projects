@@ -1,6 +1,5 @@
 package com.example.goldmoney.param;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 
 @PropertySource("classpath:config/TxtTypeConfig.properties")

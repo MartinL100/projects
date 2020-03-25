@@ -13,7 +13,11 @@ public class StaticInterceptor   implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String url = request.getRequestURI();
         System.out.println(url);
-        Boolean needCheck = url.contains("/manager")&&!url.contains("/login");
+        Boolean needCheck = url.contains("/manager")
+                &&!url.contains("/login")
+                &&!url.endsWith(".js")
+                &&!url.endsWith(".css")
+                &&!url.contains("/manager/layuiadmin");
         if (needCheck){
             Object  user = request.getSession().getAttribute("user");
             if (null==user){

@@ -1,13 +1,19 @@
 package com.example.goldmoney.bean;
 
 public class SelectBean {
-
+    /**下拉编号*/
     private String slId;
+    /**下拉项中文*/
     private String slKey;
+    /**下拉项代码值*/
     private String slValue;
+    /**下拉名称*/
     private String slName;
+    /**下拉名称代码*/
     private String slCd;
+    /**父id*/
     private String slPid;
+    /**最后修改时间*/
     private String lstModTime;
 
     public String getSlId() {
