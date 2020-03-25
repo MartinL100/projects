@@ -1,0 +1,27 @@
+[
+  {"type":"护肤","value":"抗敏感"},
+  {"type":"护肤","value":"保湿"},
+  {"type":"护肤","value":"祛疤痕"},
+  {"type":"护肤","value":"滋润"},
+  {"type":"护肤","value":"抗皱"},
+  {"type":"护肤","value":"抗氧化"},
+  {"type":"护肤","value":"深层清洁"},
+  {"type":"换季保养","value":"补水"},
+  {"type":"换季保养","value":"美白"},
+  {"type":"换季保养","value":"收缩毛孔"},
+  {"type":"换季保养","value":"控油"},
+  {"type":"彩妆","value":"粉底液"},
+  {"type":"彩妆","value":"粉饼"},
+  {"type":"彩妆","value":"蜜粉"},
+  {"type":"彩妆","value":"彩妆套装"},
+  {"type":"香氛","value":"淡香水"},
+  {"type":"香氛","value":"古龙水"},
+  {"type":"香氛","value":"男士香水"},
+  {"type":"香氛","value":"女士香水"},
+  {"type":"美发","value":"洗发水"},
+  {"type":"美发","value":"护发素"},
+  {"type":"美发","value":"发膜"},
+  {"type":"美发","value":"染发"},
+  {"type":"美发","value":"护理套装"}
+
+]
