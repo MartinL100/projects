@@ -40,13 +40,13 @@
 				</ul>
 				<ul class="message-r">
 					<div class="topMessage home">
-						<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
+						<div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
 					</div>
 					<div class="topMessage my-shangcheng">
 						<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 					</div>
 					<div class="topMessage mini-cart">
-						<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+						<div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
 					</div>
 					<div class="topMessage favorite">
 						<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
@@ -75,295 +75,253 @@
 
 
 
-
-                    <div id="f1">
-
-					
-					<div class="am-container ">
-						<div class="shopTitle ">
-							<h4>护肤</h4>
-							<h3>每一盒粉底都有一个故事</h3>
-							<div class="today-brands ">
-								<a href="# ">桂花糕</a>
-								<a href="# ">奶皮酥</a>
-								<a href="# ">栗子糕 </a>
-								<a href="# ">马卡龙</a>
-								<a href="# ">铜锣烧</a>
-								<a href="# ">豌豆黄</a>
-							</div>
-                            var str1="";
-                            var str2="";
-                            var str3="";
-                            var str4="";
-                            var str5="";
-                            var request = new XMLHttpRequest();
-                            request.open("get", "../json/secondtype.json");
-                            request.send(null);
-                            request.onload = function () {
-                            var json = JSON.parse(request.responseText);
-                            for (var key in json) {
-                            if(json[key].type=='护肤'){
-                            str1+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                            }
-                            else if(json[key].type=='换季保养'){
-                            str2+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                            }
-                            else if(json[key].type=='彩妆'){
-                            str3+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                            }
-                            else if(json[key].type=='香氛'){
-                            str4+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                            }
-                            else if(json[key].type=='美发'){
-                            str5+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                            }
+        <div id="f1">
 
 
+            <div class="am-container ">
+                <div class="shopTitle ">
+                    <h4>护肤</h4>
+                    <h3>亲肤，亲心，亲美颜</h3>
+                    <div class="today-brands ">
 
-                            }
-                            $("#ds1").html(str1);$("#ds2").html(str2);$("#ds3").html(str3);$("#ds4").html(str4);$("#ds5").html(str5);
-                            }
-
-
-
-
-
-                            <span class="more ">
-                    <a href="# ">更多<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                    </div>
+                    <span class="more ">
+                    <a href="search.html">更多<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
                         </span>
-						</div>
-					</div>
-					
-					<div class="am-g am-g-fixed floodFour">
+                </div>
+            </div>
 
-
-                            <script>
-                                function request(params) {
-                                    var url = location.href;
-                                    var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
-                                    var paraObj = { };
-                                    for (i = 0; j = paraString[i]; i++) {
-                                        paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
-                                    }
-                                    var returnValue = paraObj[params.toLowerCase()];
-                                    if (typeof (returnValue) == "undefined") {
-                                        return "";
-                                    } else {
-                                        return returnValue;
-                                    }
-                                }
-                                alert(decodeURI(request("id")))
-
-                                var str1="";
-                                var request = new XMLHttpRequest();
-                                request.open("get", "../json/secondtype.json");
-                                request.send(null);
-                                request.onload = function () {
-                                    var json = JSON.parse(request.responseText);
-                                    for (var key in json) {
-                                        if(json[key].type=='护肤'){
-                                            str1+="<dd><a title='"+json[key].value+"' href='introduction.html'><span>"+json[key].value+"</span></a></dd>"
-                                        }
-
-                                    }
-                                    $("#ds1").html(str1);
-                                }
-                            </script>
-
-                        <div class="am-u-sm-7 am-u-md-4 text-two ">
-                            <div class="outer-con ">
-                                <div class="title ">
-                                    雪之恋和风大福
-                                </div>
-                                <div class="sub-title ">
-                                    ¥13.8
-                                </div>
-                                <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+            <div class="am-g am-g-fixed floodFour">
+                <div class="am-u-sm-5 am-u-md-4 text-one list ">
+                    <div class="word">
+                        <a class="outer" href="#"><span class="inner"><b class="text">抗敏感</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">保湿</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">滋润</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">抗氧化</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">深层清洁</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">抗皱</b></span></a>
+                    </div>
+                    <a href="# ">
+                        <div class="outer-con ">
+                            <div class="title ">
+                                亲肤，亲心，亲美颜
                             </div>
-                            <a href="# "><img src="../images/2.jpg" /></a>
-                        </div>
-							<div class="am-u-sm-7 am-u-md-4 text-two sug">
-								<div class="outer-con ">
-									<div class="title ">
-										雪之恋和风大福
-									</div>									
-									<div class="sub-title ">
-										¥13.8
-									</div>
-									<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-								</div>
-								<a href="# "><img src="../images/2.jpg" /></a>
-							</div>
-                        <div class="am-u-sm-7 am-u-md-4 text-two ">
-                            <div class="outer-con ">
-                                <div class="title ">
-                                    雪之恋和风大福
-                                </div>
-                                <div class="sub-title ">
-                                    ¥13.8
-                                </div>
-                                <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                            <div class="sub-title ">
                             </div>
-                            <a href="# "><img src="../images/2.jpg" /></a>
                         </div>
-                        <div class="am-u-sm-7 am-u-md-4 text-two sug">
-                            <div class="outer-con ">
-                                <div class="title ">
-                                    雪之恋和风大福
-                                </div>
-                                <div class="sub-title ">
-                                    ¥13.8
-                                </div>
-                                <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-                            </div>
-                            <a href="# "><img src="../images/2.jpg" /></a>
+                        <img src="../images/p1.png " />
+                    </a>
+                    <div class="triangle-topright"></div>
+                </div>
+
+                <div class="am-u-sm-7 am-u-md-4 text-two sug">
+                    <div class="outer-con ">
+                        <div class="title ">
+                            HR赫莲娜面霜
                         </div>
-                        <div class="am-u-sm-7 am-u-md-4 text-two ">
-                            <div class="outer-con ">
-                                <div class="title ">
-                                    雪之恋和风大福
-                                </div>
-                                <div class="sub-title ">
-                                    ¥13.8
-                                </div>
-                                <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-                            </div>
-                            <a href="# "><img src="../images/2.jpg" /></a>
+                        <div class="sub-title ">
+                            ¥1620
                         </div>
-                        <div class="am-u-sm-7 am-u-md-4 text-two sug">
-                            <div class="outer-con ">
-                                <div class="title ">
-                                    雪之恋和风大福
-                                </div>
-                                <div class="sub-title ">
-                                    ¥13.8
-                                </div>
-                                <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-                            </div>
-                            <a href="# "><img src="../images/2.jpg" /></a>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                    <a href="introduction.html?id=i1"><img src="../images/photo1.png" /></a>
+                </div>
+
+                <div class="am-u-sm-7 am-u-md-4 text-two">
+                    <div class="outer-con ">
+                        <div class="title ">
+                            LaPRECIA岩白菜VC水
                         </div>
+                        <div class="sub-title ">
+                            ¥345
+                        </div>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                    <a href="introduction.html?id=i2"><img src="../images/photo2.png" /></a>
+                </div>
 
 
+                <div class="am-u-sm-3 am-u-md-2 text-three big">
+                    <div class="outer-con ">
+                        <div class="title ">
+                            黑绷带活颜修护晚霜
+                        </div>
+                        <div class="sub-title ">
+                            ¥2120
+                        </div>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                    <a href="introduction.html?id=i3"><img src="../images/photo3.png" /></a>
+                </div>
+
+                <div class="am-u-sm-3 am-u-md-2 text-three sug">
+                    <div class="outer-con ">
+                        <div class="title ">
+                            杜克神经酰淡纹修复霜
+                        </div>
+                        <div class="sub-title ">
+                            ¥960
+                        </div>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                    <a href="introduction.html?id=i4"><img src="../images/photo4.png" /></a>
+                </div>
+
+                <div class="am-u-sm-3 am-u-md-2 text-three ">
+                    <div class="outer-con ">
+                        <div class="title ">
+                            优色林舒安修护霜
+                        </div>
+                        <div class="sub-title ">
+                            ¥185
+                        </div>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                    <a href="introduction.html?id=i5"><img src="../images/photo5.png" /></a>
+                </div>
+
+                <div class="am-u-sm-3 am-u-md-2 text-three last big ">
+                    <div class="outer-con ">
+                        <div class="title ">
+                            Topix保湿爽肤水喷雾
+                        </div>
+                        <div class="sub-title ">
+                            ¥185
+                        </div>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                    <a href="introduction.html?id=i6"><img src="../images/photo6.png" /></a>
+                </div>
+
+            </div>
+            <div class="clear "></div>
+        </div>
 
 
+        <div id="f2">
 
+            <div class="am-container ">
+                <div class="shopTitle ">
+                    <h4>香氛</h4>
+                    <h3>是好还是坏，只要做你自己就好!</h3>
+                    <div class="today-brands ">
 
-					</div>
-                 <div class="clear "></div>  
-                 </div>
-                 
-  
-                    <div id="f2">
-					<!--坚果-->
-					<div class="am-container ">
-						<div class="shopTitle ">
-							<h4>坚果</h4>
-							<h3>酥酥脆脆，回味无穷</h3>
-							<div class="today-brands ">
-								<a href="# ">腰果</a>
-								<a href="# ">松子</a>
-								<a href="# ">夏威夷果 </a>
-								<a href="# ">碧根果</a>
-								<a href="# ">开心果</a>
-								<a href="# ">核桃仁</a>
-							</div>
-							<span class="more ">
-                    <a href="# ">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                    </div>
+                    <span class="more ">
+                    <a href="search.html ">更多<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
                         </span>
-						</div>
-					</div>
-					<div class="am-g am-g-fixed floodThree ">
+                </div>
+            </div>
+            <div class="am-g am-g-fixed floodThree ">
+                <div class="am-u-sm-4 text-four list">
+                    <div class="word">
+                        <a class="outer" href="#"><span class="inner"><b class="text">淡香</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">古龙</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">男士</b></span></a>
+                        <a class="outer" href="#"><span class="inner"><b class="text">女士</b></span></a>
 
-						<div class="am-u-sm-4 text-four">
-							<a href="# ">
-								<img src="../images/6.jpg" />
-								<div class="outer-con ">
-									<div class="title ">
-										雪之恋和风大福
-									</div>								
-									<div class="sub-title ">
-										¥13.8
-									</div>
-									<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-								</div>
-							</a>
-						</div>
-						<div class="am-u-sm-4 text-four sug">
-							<a href="# ">
-								<img src="../images/7.jpg" />
-								<div class="outer-con ">
-									<div class="title ">
-										雪之恋和风大福
-									</div>
-									<div class="sub-title ">
-										¥13.8
-									</div>
-									<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-								</div>
-							</a>
-						</div>
-						
-						<div class="am-u-sm-6 am-u-md-3 text-five big ">
-							<a href="# ">
-								<img src="../images/10.jpg" />
-								<div class="outer-con ">
-									<div class="title ">
-										雪之恋和风大福
-									</div>		
-									<div class="sub-title ">
-										¥13.8
-									</div>
-									<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-								</div>
-							</a>
-						</div>						
-						<div class="am-u-sm-6 am-u-md-3 text-five ">
-							<a href="# ">
-								<img src="../images/8.jpg" />
-								<div class="outer-con ">
-									<div class="title ">
-										雪之恋和风大福
-									</div>	
-									<div class="sub-title ">
-										¥13.8
-									</div>
-									<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-								</div>
-							</a>
-						</div>						
-						<div class="am-u-sm-6 am-u-md-3 text-five sug">
-							<a href="# ">
-								<img src="../images/9.jpg" />
-								<div class="outer-con ">
-									<div class="title ">
-										雪之恋和风大福
-									</div>
-									<div class="sub-title ">
-										¥13.8
-									</div>
-									<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-								</div>
-							</a>
-						</div>
-						<div class="am-u-sm-6 am-u-md-3 text-five big">
-							<a href="# ">
-								<img src="../images/10.jpg" />
-								<div class="outer-con ">
-									<div class="title ">
-										雪之恋和风大福
-									</div>			
-									<div class="sub-title ">
-										¥13.8
-									</div>
-									<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-								</div>
-							</a>
-						</div>
-						
-					</div>
+                    </div>
+                    <a href="# ">
+                        <img src="../images/p1.png " />
+                        <div class="outer-con ">
+                            <div class="title ">
+                                神奇致美，纯净自然
+                            </div>
+                        </div>
+                    </a>
+                    <div class="triangle-topright"></div>
+                </div>
+                <div class="am-u-sm-4 text-four">
+                    <a href="introduction.html?id=id58">
+                        <img src="../images/xs1.png" />
+                        <div class="outer-con ">
+                            <div class="title ">
+                                香奈儿蔚蓝男士香水
+                            </div>
+                            <div class="sub-title ">
+                                ¥460
+                            </div>
+                            <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="am-u-sm-4 text-four sug">
+                    <a href="# ">
+                        <img src="../images/xs2.png" />
+                        <div class="outer-con ">
+                            <div class="title ">
+                                香奈儿木质香调淡清新
+                            </div>
+                            <div class="sub-title ">
+                                ¥400
+                            </div>
+                            <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                        </div>
+                    </a>
+                </div>
 
-					<div class="clear "></div>
-					</div>
+                <div class="am-u-sm-6 am-u-md-3 text-five big ">
+                    <a href="# ">
+                        <img src="../images/xs3.png" />
+                        <div class="outer-con ">
+                            <div class="title ">
+                                罗意威loewe香水
+                            </div>
+                            <div class="sub-title ">
+                                ¥239
+                            </div>
+                            <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="am-u-sm-6 am-u-md-3 text-five ">
+                    <a href="# ">
+                        <img src="../images/xs4.png" />
+                        <div class="outer-con ">
+                            <div class="title ">
+                                爱马仕香水Terre D
+                            </div>
+                            <div class="sub-title ">
+                                ¥336
+                            </div>
+                            <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="am-u-sm-6 am-u-md-3 text-five sug">
+                    <a href="# ">
+                        <img src="../images/xs5.png" />
+                        <div class="outer-con ">
+                            <div class="title ">
+                                环球旅行淡香
+                            </div>
+                            <div class="sub-title ">
+                                ¥120
+                            </div>
+                            <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="am-u-sm-6 am-u-md-3 text-five big">
+                    <a href="# ">
+                        <img src="../images/xs6.png" />
+                        <div class="outer-con ">
+                            <div class="title ">
+                                Gucci Guilty古驰
+                            </div>
+                            <div class="sub-title ">
+                                ¥339
+                            </div>
+                            <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="clear "></div>
+        </div>
+
 
    
    
@@ -385,7 +343,7 @@
 								<a href="# ">合作伙伴</a>
 								<a href="# ">联系我们</a>
 								<a href="# ">网站地图</a>
-								<em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
+								<em>© </em>
 							</p>
 						</div>
 					</div>

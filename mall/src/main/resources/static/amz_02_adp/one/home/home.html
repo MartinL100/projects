@@ -40,13 +40,13 @@
 				</ul>
 				<ul class="message-r">
 					<div class="topMessage home">
-						<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
+						<div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
 					</div>
 					<div class="topMessage my-shangcheng">
 						<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 					</div>
 					<div class="topMessage mini-cart">
-						<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+						<div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
 					</div>
 					<div class="topMessage favorite">
 						<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
@@ -62,13 +62,20 @@
 					</div>
 
 					<div class="search-bar pr">
-						<a name="index_none_header_sysc" href="#"></a>
+						<a id="parm" name="index_none_header_sysc" href="search.html"></a>
 						<form>
 							<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-							<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+							<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1"  onclick="go()">
 						</form>
 					</div>
 				</div>
+            <script>
+                function go() {
+                    $("#parm").attr("href","search.html?parm="+$("#searchInput").val())
+                    window.location.href="search.html?parm="+$("#searchInput").val()
+                }
+
+            </script>
 
 				<div class="clear"></div>
 			</div>
@@ -281,23 +288,7 @@
                                     str5+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
                                 }
                             }
-                            for (var key in json) {
-                                if(json[key].type=='护肤'){
-                                    str1+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                                }
-                                else if(json[key].type=='换季保养'){
-                                    str2+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                                }
-                                else if(json[key].type=='彩妆'){
-                                    str3+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                                }
-                                else if(json[key].type=='香氛'){
-                                    str4+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                                }
-                                else if(json[key].type=='美发'){
-                                    str5+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
-                                }
-                            }
+
                             $("#ds1").html(str1);$("#ds2").html(str2);$("#ds3").html(str3);$("#ds4").html(str4);$("#ds5").html(str5);
                         }
 
@@ -383,9 +374,9 @@
 							<div class="clear"></div>
 						</div>
 
-								<li><a target="_blank" href="#"><span>[特惠]</span>洋河年末大促，低至两件五折</a></li>
-								<li><a target="_blank" href="#"><span>[公告]</span>华北、华中部分地区配送延迟</a></li>
-								<li><a target="_blank" href="#"><span>[特惠]</span>家电狂欢千亿礼券 买1送1！</a></li>
+								<li><a target="_blank" href="#"><span>[特惠]</span>Lancome兰蔻珍爱午夜玫瑰/璀璨爱恋女士香水30ml50ml75ml女香正品</a></li>
+								<li><a target="_blank" href="#"><span>[公告]</span>部分地区配送延迟</a></li>
+								<li><a target="_blank" href="#"><span>[特惠]</span>部分美妆买1送1！</a></li>
 
 							</ul>
 
@@ -681,7 +672,7 @@
 								<a href="# ">合作伙伴</a>
 								<a href="# ">联系我们</a>
 								<a href="# ">网站地图</a>
-								<em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
+								<em>© </em>
 							</p>
 						</div>
 					</div>
