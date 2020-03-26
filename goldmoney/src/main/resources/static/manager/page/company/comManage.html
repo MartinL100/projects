@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公司列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">公司名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="comName" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div><!--公司名称-->
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">公司行业</label>
+                    <div class="layui-input-inline" >
+                        <select name="comType" lay-search>
+                            <option value="">请选择分类</option>
+                            <option value="01">贸易</option>
+                            <option value="02">工程</option>
+                            <option value="03">材料</option>
+                            <option value="04">设计/企划</option>
+                            <option value="05">服务</option>
+                            <option value="06">管理</option>
+                            <option value="07">产品</option>
+                            <option value="08">科技</option>
+                            <option value="09">投资</option>
+                            <option value="10">综合</option>
+                            <option value="11">物流</option>
+                            <option value="12">代理</option>
+                            <option value="13">人才</option>
+                            <option value="14">房产</option>
+                            <option value="15">金融</option>
+                            <option value="16">其它</option>
+                        </select>
+                    </div>
+                </div><!--公司行业-->
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">公司地区</label>
+                    <div class="layui-input-inline" >
+                        <select name="comArea" lay-search>
+                            <option value="">请选择分类</option>
+                            <option value="01">锦江区</option>
+                            <option value="02">武侯区</option>
+                            <option value="03">青羊区</option>
+                            <option value="04">成华区</option>
+                            <option value="05">龙泉驿区</option>
+                            <option value="06">新都区</option>
+                            <option value="07">郫都区</option>
+                            <option value="08">高新区</option>
+                            <option value="09">天府新区</option>
+                            <option value="10">青白江区</option>
+                        </select>
+                    </div>
+                </div><!--公司地区-->
+
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">纳税类型</label>
+                    <div class="layui-input-inline">
+                        <select name="comPayType">
+                            <option value="">请选择</option>
+                            <option value="01">一般纳税人</option>
+                            <option value="02">小规模纳税人</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-list" lay-submit lay-filter="LAY-app-contlist-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <div style="padding-bottom: 10px;">
+                <button class="layui-btn layuiadmin-btn-list" data-type="batchdel">公司详情</button>
+                <button class="layui-btn layuiadmin-btn-list" data-type="add">公司修改</button>
+                <button class="layui-btn layuiadmin-btn-list" data-type="del">删除公司</button>
+            </div>
+            <table id="LAY-app-content-list" lay-filter="LAY-app-content-list"></table>
+<!--            <script type="text/html" id="table-content-list">-->
+<!--                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>上热门</a>-->
+<!--                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>下热门</a>-->
+<!--            </script>-->
+        </div>
+    </div>
+</div>
+
+<script src="../../layuiadmin/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'ComContlist', 'table'], function(){
+        var table = layui.table
+            ,form = layui.form;
+
+        //监听搜索
+        form.on('submit(LAY-app-contlist-search)', function(data){
+            var field = data.field;
+            $.post(
+                '/manager/queryComs'
+                ,field
+                ,function (r) {
+                    field = r;
+                }
+            )
+            //执行重载
+            table.reload('LAY-app-content-list', {
+                where: field
+            });
+
+            return false;
+        });
+
+        var $ = layui.$, active = {
+            batchdel: function(){
+                var checkStatus = table.checkStatus('LAY-app-content-list')
+                    ,checkData = checkStatus.data; //得到选中的数据
+
+                if(checkData.length !== 1){
+                    return layer.msg('请选择一行进行操作');
+                }else {
+                    var url = 'company/comInfo.html?comId='+checkData[0].comId;
+                    window.parent.layui.index.openTabsPage(url,"公司详情")
+                }
+
+
+
+            },
+            add: function(){
+                var checkStatus = table.checkStatus('LAY-app-content-list')
+                    ,checkData = checkStatus.data; //得到选中的数据
+
+                if(checkData.length !== 1){
+                    return layer.msg('请选择一行进行操作');
+                }
+
+                var url = 'company/updateCom.html?comId='+checkData[0].comId;
+                window.parent.layui.index.openTabsPage(url,"修改公司")
+
+            },
+            del: function(){
+                var checkStatus = table.checkStatus('LAY-app-content-list')
+                    ,checkData = checkStatus.data; //得到选中的数据
+
+                if(checkData.length !== 1){
+                    return layer.msg('请选择一行进行操作');
+                }
+
+                layer.confirm('确定删除吗？', function(index) {
+
+                    var data = {
+                        comId:checkData[0].comId
+                    };
+                    $.post(
+                        "/manager/delCom"
+                        ,data
+                        ,function () {
+                            table.reload('LAY-app-content-list');
+                            layer.msg('已删除');
+                        }
+                    )
+
+                });
+
+
+
+            }
+        };
+
+        $('.layui-btn.layuiadmin-btn-list').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+    });
+</script>
+</body>
+</html>

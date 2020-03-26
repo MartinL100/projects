@@ -1,4 +1,4 @@
-package com.cbat.starsymbol.controller;
+package com.cbat.starsymbol.controller.admin;
 
 
 import com.cbat.starsymbol.bean.PageQueryBean;

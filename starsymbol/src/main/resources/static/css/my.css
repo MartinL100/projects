@@ -1,5 +1,6 @@
 .footerdiv{
     background-color: #f4f4f4;width: 100%;padding-top: 50px;padding-bottom: 150px;
+    font-weight: normal;font-family:"Microsoft YaHei";font-size: 14px;
 }
 .footer-left{
     width: 40%;float: left
@@ -270,4 +271,44 @@
 .cbat-hr-witesmoke{
     color: whitesmoke;
     background-color: whitesmoke;
+}
+
+
+
+
+/*------------------------*/
+
+.cbat-form-radio{
+    display: none;
+}
+.comTypeArea{
+    margin-top: 12px;
+}
+.comTypeArea label{
+    color: #6c6c6c;
+    font-weight: normal;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.ipt-tow{
+margin-top: 10px;
+}
+.ipt-tow input{
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.cbat-ajx-btn{
+    width: 60px;
+    height: 30px;
+    background-color: rgb(255,184,0);
+
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: orange solid 1px;
 }

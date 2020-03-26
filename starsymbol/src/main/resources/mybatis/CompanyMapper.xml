@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cbat.starsymbol.dao.ICompanyDao">
+
+    <sql id="query">
+        <where>
+            <if test="comId !=null and comId!=''">
+            and  com_id = #{comId}
+            </if>
+            <if test="comName !=null and comName!=''">
+                and  com_name = #{comName}
+            </if>
+            <if test="comArea !=null and comArea!=''">
+                and  com_area = #{comArea}
+            </if>
+            <if test="comType !=null and comType!=''">
+                and  com_type = #{comType}
+            </if>
+            <if test="comPayType !=null and comPayType!=''">
+                and  com_pay_type = #{comPayType}
+            </if>
+
+
+            <if test="startMoney !=null ">
+                and  com_money &gt; #{startMoney}
+            </if>
+            <if test="endMoney !=null ">
+                and  com_money &lt; #{endMoney}
+            </if>
+            <if test="startTime !=null  ">
+                and  com_time &gt; #{startTime}
+            </if>
+            <if test="endTime !=null ">
+                and  com_time &lt; #{endTime}
+            </if>
+        </where>
+
+    </sql>
+
+
+    <sql id="update">
+        <set>
+            <if test="comName !=null and comName!=''">
+                 com_name = #{comName},
+            </if>
+            <if test="comArea !=null and comArea!=''">
+                com_area = #{comArea},
+            </if>
+            <if test="comType !=null and comType!=''">
+                  com_type = #{comType},
+            </if>
+            <if test="comPayType !=null and comPayType!=''">
+                  com_pay_type = #{comPayType},
+            </if>
+            <if test="comMoney !=null and comMoney!=''">
+                com_money = #{comMoney},
+            </if>
+            <if test="comTime !=null and comTime!=''">
+                com_time = #{comTime},
+            </if>
+            <if test="lstModTime !=null and lstModTime!=''">
+                lst_mod_time = #{lstModTime},
+            </if>
+        </set>
+    </sql>
+
+
+    <select id="findComList" parameterType="CompanyBean" resultType="CompanyBean">
+        SELECT
+        `com_id`,
+        `com_name`,
+        `com_type`,
+        `com_money`,
+        `com_area`,
+        `com_time`,
+        `com_pay_type`,
+        `lst_mod_time`
+        FROM `t_company` t
+        <include refid="query"></include>
+        order by t.lst_mod_time desc
+        <if test="page!=null and page!='0'.toString">
+            limit #{index},#{limit}
+        </if>
+    </select>
+
+
+    <select id="countCom" parameterType="CompanyBean" resultType="Integer">
+        SELECT
+        count(t.com_id)
+        FROM t_company t
+        <include refid="query"></include>
+    </select>
+
+    <insert id="addCom" parameterType="CompanyBean">
+           INSERT INTO `db01`.`t_company`
+            (`com_id`,
+             `com_name`,
+             `com_type`,
+             `com_money`,
+             `com_area`,
+             `com_time`,
+             `com_pay_type`,
+             `lst_mod_time`)
+            VALUES (#{comId},
+                    #{comName},
+                    #{comType},
+                    #{comMoney},
+                    #{comArea},
+                   #{comTime},
+                    #{comPayType},
+                    #{lstModTime});
+    </insert>
+
+    <update id="updateCom" parameterType="CompanyBean">
+        UPDATE `t_company`
+              <include refid="update"></include>
+        WHERE `com_id` = #{comId}
+    </update>
+
+    <delete id="delCom" parameterType="CompanyBean">
+            DELETE
+            FROM `t_company`
+            WHERE `com_id` = #{comId}
+    </delete>
+</mapper>

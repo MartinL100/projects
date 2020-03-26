@@ -1,4 +1,4 @@
-package com.example.goldmoney.controller;
+package com.example.goldmoney.controller.admin;
 
 
 
