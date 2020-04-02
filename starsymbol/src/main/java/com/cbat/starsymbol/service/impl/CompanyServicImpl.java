@@ -35,6 +35,9 @@ public class CompanyServicImpl implements ICompanyServic {
     @Override
     public List<CompanyBean> findComList(CompanyBean companyBean) {
         List<CompanyBean> companyBeans =  companyDao.findComList(companyBean);
+        if (null==companyBeans){
+            return companyBeans;
+        }
         for (CompanyBean c:companyBeans) {
             c.setComAreaDesc(selectService.translate(Area.Area_CD,c.getComArea()));
             c.setComPayTypeDesc(selectService.translate(ComPayType.CPT_CD,c.getComPayType()));

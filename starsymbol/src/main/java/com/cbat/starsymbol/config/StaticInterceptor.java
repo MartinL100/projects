@@ -12,7 +12,6 @@ public class StaticInterceptor   implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String url = request.getRequestURI();
-        System.out.println(url);
         Boolean needCheck = url.contains("/manager")
                 &&!url.contains("/login")
                 &&!url.endsWith(".js")

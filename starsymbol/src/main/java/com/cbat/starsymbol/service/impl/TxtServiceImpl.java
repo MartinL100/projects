@@ -35,6 +35,9 @@ public class TxtServiceImpl implements ITxtService {
     @Override
     public List<TxtBean> findTxtAndSelect(TxtBean txtBean) {
         List<TxtBean> txtBeans = txtDao.findTxtCommon(txtBean);
+        if (null == txtBeans){
+            return txtBeans;
+        }
         for (TxtBean t:txtBeans) {
             //此处翻译下拉
            t.setTxtTypeDesc(selectService.translate(TxtType.SL_CD,t.getTxtType()));

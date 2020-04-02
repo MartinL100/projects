@@ -21,6 +21,9 @@ public class licenseServiceImpl implements ILicenseService {
     @Override
     public List<LicenceBean> findLicList(LicenceBean licenceBean) {
         List<LicenceBean> licenceBeans = licenseDao.findLicList(licenceBean);
+        if (null==licenceBeans){
+            return licenceBeans;
+        }
         //翻译
         for (LicenceBean lic:licenceBeans) {
             lic.setLicTypeDesc(selectService.translate(LicenceType.LT_CD,lic.getLicType()));
