@@ -13,7 +13,8 @@
 		<link href="../css/cartstyle.css" rel="stylesheet" type="text/css" />
 
 		<link href="../css/jsstyle.css" rel="stylesheet" type="text/css" />
-
+		<script src="../js/changecookie.js"></script>
+		<script src="../js/jquery.js"></script>
 		<script type="text/javascript" src="../js/address.js"></script>
 
 	</head>
@@ -24,9 +25,9 @@
 		<div class="am-container header">
 			<ul class="message-l">
 				<div class="topMessage">
-					<div class="menu-hd">
-						<a href="#" target="_top" class="h">亲，请登录</a>
-						<a href="#" target="_top">免费注册</a>
+					<div class="menu-hd" name="login" >
+						<a href="login.html" >亲，请登录</a>
+						<a href="register.html" target="_top">免费注册</a>
 					</div>
 				</div>
 			</ul>
@@ -35,7 +36,7 @@
 					<div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
 				</div>
 				<div class="topMessage my-shangcheng">
-					<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+					<div class="menu-hd MyShangcheng"><a href="information.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 				</div>
 				<div class="topMessage mini-cart">
 					<div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
@@ -45,23 +46,29 @@
 			</ul>
 			</div>
 
-			<!--悬浮搜索框-->
+		<!--悬浮搜索框-->
 
-			<div class="nav white">
-				<div class="logo"><img src="../images/logo.png" /></div>
-				<div class="logoBig">
-					<li><img src="../images/logobig.png" /></li>
-				</div>
-
-				<div class="search-bar pr">
-					<a name="index_none_header_sysc" href="#"></a>
-					<form>
-						<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-						<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-					</form>
-				</div>
+		<div class="nav white">
+			<div class="logo"><img src="../images/logo.png" /></div>
+			<div class="logoBig">
+				<li><img src="../images/logobig.png" /></li>
 			</div>
 
+			<div class="search-bar pr">
+				<a id="parm" name="index_none_header_sysc" href="search.html"></a>
+				<form>
+					<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+					<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1"  onclick="go()">
+				</form>
+			</div>
+		</div>
+		<script>
+			function go() {
+				$("#parm").attr("href","search.html?parm="+$("#searchInput").val())
+				window.location.href="search.html?parm="+$("#searchInput").val()
+			}
+
+		</script>
 			<div class="clear"></div>
 			<div class="concent">
 				<!--地址 -->
@@ -203,71 +210,7 @@
 
 								</div>
 							</div>
-							<div class="clear"></div>
 
-							<tr class="item-list">
-								<div class="bundle  bundle-last">
-
-									<div class="bundle-main">
-										<ul class="item-content clearfix">
-											<div class="pay-phone">
-												<li class="td td-item">
-													<div class="item-pic">
-														<a href="#" class="J_MakePoint">
-															<img src="../images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg"></a>
-													</div>
-													<div class="item-info">
-														<div class="item-basic-info">
-															<a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</a>
-														</div>
-													</div>
-												</li>
-												<li class="td td-info">
-													<div class="item-props">
-														<span class="sku-line">颜色：12#川南玛瑙</span>
-														<span class="sku-line">包装：裸装</span>
-													</div>
-												</li>
-												<li class="td td-price">
-													<div class="item-price price-promo-promo">
-														<div class="price-content">
-															<em class="J_Price price-now">39.00</em>
-														</div>
-													</div>
-												</li>
-											</div>
-											<li class="td td-amount">
-												<div class="amount-wrapper ">
-													<div class="item-amount ">
-														<span class="phone-title">购买数量</span>
-														<div class="sl">
-															<input class="min am-btn" name="" type="button" value="-" />
-															<input class="text_box" name="" type="text" value="3" style="width:30px;" />
-															<input class="add am-btn" name="" type="button" value="+" />
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="td td-sum">
-												<div class="td-inner">
-													<em tabindex="0" class="J_ItemSum number">117.00</em>
-												</div>
-											</li>
-											<li class="td td-oplist">
-												<div class="td-inner">
-													<span class="phone-title">配送方式</span>
-													<div class="pay-logis">
-														快递<b class="sys_item_freprice">10</b>元
-													</div>
-												</div>
-											</li>
-
-										</ul>
-										<div class="clear"></div>
-
-									</div>
-							</tr>
-							<div class="clear"></div>
 							</div>
 
 							<tr id="J_BundleList_s_1911116345_1" class="item-list">
@@ -331,6 +274,7 @@
 										<div class="clear"></div>
 
 									</div>
+								</div>
 							</tr>
 							</div>
 							<div class="clear"></div>
@@ -403,7 +347,7 @@
 							<!--含运费小计 -->
 							<div class="buy-point-discharge ">
 								<p class="price g_price ">
-									合计（含运费） <span>¥</span><em class="pay-sum">244.00</em>
+									合计（含运费） <span>¥</span><em class="pay-sum">64.00</em>
 								</p>
 							</div>
 
@@ -413,7 +357,7 @@
 									<div class="box">
 										<div tabindex="0" id="holyshit267" class="realPay"><em class="t">实付款：</em>
 											<span class="price g_price ">
-                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">244.00</em>
+                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">64.00</em>
 											</span>
 										</div>
 
@@ -455,22 +399,18 @@
 				<div class="footer">
 					<div class="footer-hd">
 						<p>
-							<a href="#">律小丫</a>
-							<b>|</b>
-							<a href="#">商城首页</a>
-							<b>|</b>
-							<a href="#">支付宝</a>
-							<b>|</b>
-							<a href="#">物流</a>
+							<a href="home.html">律小丫</a>
+									<b>|</b>
+									<a href="home.html">商城首页</a>
 						</p>
 					</div>
 					<div class="footer-bd">
 						<p>
-							<a href="#">关于律小丫</a>
-							<a href="#">合作伙伴</a>
-							<a href="#">联系我们</a>
-							<a href="#">网站地图</a>
-							<em>© </em>
+							<a href="home.html">关于律小丫</a>
+							<a href="liuyan.html">合作伙伴</a>
+							<a href="liuyan.html">联系我们</a>
+
+							<em>©2020 成都泊涞名汇电子商务有限公司 蜀CP备19019695号</em>
 						</p>
 					</div>
 				</div>
@@ -541,4 +481,46 @@
 			<div class="clear"></div>
 	</body>
 
+	<script>
+		$("[name='show']").hide();
+		var  username=checklogin();
+		if (username!="not"){
+			$("[name='login']").html('<a  >欢迎，'+username+'</a>')
+			$("[name='hide']").hide();
+			$("[name='show']").show();
+		}
+		var jsonarr=getcar();
+		var carhtml="";
+		var a=0
+		var all=0
+		if( jsonarr!='not') {
+			for (var i in jsonarr) {
+				a++;
+				carhtml += '<ul class="item-content clearfix"><li class="td td-chk"><div class="cart-checkbox ">' +
+						'<input class="check" id="J_CheckBox_170769542747" name="items[]" value="170769542747" type="checkbox">' +
+						'<label for="J_CheckBox_170769542747"></label></div></li><li class="td td-item"><div class="item-pic">' +
+						'<a href="introduction.html?id='+jsonarr[i].id+'" target="_blank" data-title="正品 持久保湿滋润防水不掉色护唇彩妆" class="J_MakePoint" data-point="tbcart.8.12"><img style="width: 85px;height: 85px" src="../images/'+jsonarr[i].photo+'.png" class="itempic J_ItemImg"></a></div>' +
+						'<div class="item-info"><div class="item-basic-info">' +
+						'<a href="introduction.html?id='+jsonarr[i].id+'" target="_blank" title="不掉色" class="item-title J_MakePoint" data-point="tbcart.8.11">'+jsonarr[i].name+'</a></div></div></li>' +
+						'<li class="td td-info"><div class="item-props item-props-can">' +
+						'<span class="sku-line">包装：礼盒（送彩带）</span><span tabindex="0" class="btn-edit-sku theme-login">修改</span>' +
+						'<i class="theme-login am-icon-sort-desc"></i></div></li><li class="td td-price"><div class="item-price price-promo-promo"> <div' +
+						' class="price-content"><div class="price-line"><em class="price-original"></em></div>' +
+						'<div class="price-line"><em class="J_Price price-now" tabindex="0">'+jsonarr[i].price+'</em></div></div></div></li>' +
+						'<li class="td td-amount"><div class="amount-wrapper "><div class="item-amount "><div class="sl">' +
+						'<input class="min am-btn" name="" type="button" value="-" />' +
+						'<input class="text_box" name="" type="text" value="'+jsonarr[i].num+'" style="width:30px;" />' +
+						'<input class="add am-btn" name="" type="button" value="+" /></div></div></div></li>' +
+						'<li class="td td-sum"><div class="td-inner"><em tabindex="0" class="J_ItemSum number">'+jsonarr[i].price*jsonarr[i].num+'</em><' +
+						'/div></li><li class="td td-op"><div class="td-inner">' +
+
+						'<a href="shopcart.html"  onclick="'+delcar(jsonarr[i].id)+'" class="delete">删除</a></div> </li> </ul>'
+				all+=jsonarr[i].price*jsonarr[i].num;
+			}
+			$("#car").html(carhtml);
+		}
+
+		$("heji").text(all);
+
+	</script>
 </html>

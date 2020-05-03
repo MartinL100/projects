@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+
+    <title>商家入驻</title>
+
+    <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+
+    <link href="../css/personal.css" rel="stylesheet" type="text/css">
+    <link href="../css/infstyle.css" rel="stylesheet" type="text/css">
+    <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../AmazeUI-2.4.2/assets/js/amazeui.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
+    <script src="../js/changecookie.js"></script>
+    <script src="../js/myjson.js"></script>
+</head>
+
+<body>
+<!--头 -->
+<header>
+    <article>
+        <div class="mt-logo">
+            <!--顶部导航条 -->
+            <!--顶部导航条 -->
+            <div class="am-container header">
+                <ul class="message-l">
+                    <div class="topMessage">
+                        <div class="menu-hd" name="login" >
+                            <!--<a href="login.html" >亲，请登录</a>-->
+                            <!--<a href="register.html" target="_top">免费注册</a>-->
+                        </div>
+                    </div>
+                </ul>
+                <ul class="message-r">
+                    <div class="topMessage home">
+                        <div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
+                    </div>
+                    <div class="topMessage my-shangcheng">
+                        <div class="menu-hd MyShangcheng"><a href="information.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+                    </div>
+                    <div class="topMessage mini-cart">
+                        <div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
+                    </div>
+                    <div class="topMessage favorite">
+                        <div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
+                    </div>
+                </ul>
+            </div>
+
+            <!--悬浮搜索框-->
+
+            <div class="nav white">
+                <div class="logo"></div>
+                <div class="logoBig">
+                    <li><img src="../images/logobig.png" /></li>
+                </div>
+
+                <div class="search-bar pr">
+                    <a id="parm" name="index_none_header_sysc" href="search.html"></a>
+                    <form>
+                        <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+                        <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1"  onclick="go()">
+                    </form>
+                </div>
+            </div>
+            <script>
+                function go() {
+                    $("#parm").attr("href","search.html?parm="+$("#searchInput").val())
+                    window.location.href="search.html?parm="+$("#searchInput").val()
+                }
+
+            </script>
+            <script type="text/javascript">
+                var id=66;
+                function showdiv(a) {
+                    if ($("#"+a).css('display')=='none'){
+                        $("#"+a).show()
+                    }
+                    else{
+                        $("#"+a).hide()
+                    }
+
+                }
+                function formatterDate(date) {
+                    var day = date.getDate() > 9 ? date.getDate() : "0" + date.getDate();
+                    var month = (date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : "0"
+                        + (date.getMonth() + 1);
+                    return date.getFullYear() + '年' + month + '月' + day+'日';
+                };
+                var date1=formatterDate(new Date())
+                function addapple() {
+                    id++;
+                    var str=$("#say_some").val();
+                    if (str.length<1)
+                        return;
+                    var hstr= '<li class="am-comment"><a href=""><img class="am-comment-avatar" src="../images/hwbn40x40.jpg" /></a>' +
+                        '<div class="am-comment-main"><!-- 评论内容容器 --><header class="am-comment-hd">' +
+                        '<div class="am-comment-meta"><a href="#link-to-user" class="am-comment-author">匿名用户</a>发表于' +
+                        '<time datetime="">'+date1+'</time></div></header><div class="am-comment-bd">' +
+                        '<div class="tb-rev-item " data-id="255776406962">' +
+                        '<div class="J_TbcRate_ReviewContent tb-tbcr-content ">'
+                        +str+'</div><div class="tb-r-act-bar">' +
+                        '<textarea  id="'+id+'"cols="80" rows="3" autocomplete="off" placeholder="请输入您的评论" hidden></textarea>' +
+                        '<div class="am-btn am-btn-danger" style="float: right;margin-right: 50px" ' +
+                        'onclick="showdiv('+id+')">评论</div> </div> </div></div></div></li>'
+                    $("#apple").append(hstr);
+
+                }
+
+            </script>
+
+            <div class="clear"></div>
+        </div>
+        </div>
+    </article>
+</header>
+<div class="nav-table">
+    <div class="long-title"><span class="all-goods">全部分类</span></div>
+    <div class="nav-cont">
+        <ul>
+            <li class="index"><a href="home.html">首页</a></li>
+            <li class="qc last"><a href="pinglun.html">发布信息</a></li>
+        </ul>
+
+    </div>
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+
+        <div class="main-wrap">
+            <div >
+                <div style="margin-right:100px " >
+                    <p>描述问题：</p>
+                    <blockquote class="textArea">
+                        <textarea name="opinionContent" id="say_some" cols="120" rows="5" autocomplete="off" placeholder="在此发表您的信息"></textarea>
+                    </blockquote>
+                </div>
+                <div class="am-btn am-btn-danger anniu" style="float: right;margin-right: 70px" onclick="addapple()">提交</div>
+
+            </div>
+
+
+
+            <div class="user-info">
+                <!--标题 -->
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg"></strong>  <small></small></div>
+                </div>
+                <hr/>
+
+                <!--头像 -->
+
+                <ul class="am-comments-list am-comments-list-flip">
+                    <div id="apple">
+
+                    </div>
+
+                    <li class="am-comment">
+                        <!-- 评论容器 -->
+                        <a href="">
+                            <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                            <!-- 评论者头像 -->
+                        </a>
+
+                        <div class="am-comment-main">
+                            <!-- 评论内容容器 -->
+                            <header class="am-comment-hd">
+                                <!--<h3 class="am-comment-title">评论标题</h3>-->
+                                <div class="am-comment-meta">
+                                    <!-- 评论元数据 -->
+                                    <a href="#link-to-user" class="am-comment-author">幸福兔韩妆店</a>
+                                    <!-- 评论者 -->
+                                    发表于
+                                    <time datetime="">2020年03月02日 </time>
+                                </div>
+                            </header>
+
+                            <div class="am-comment-bd">
+                                <div class="tb-rev-item " data-id="255776406962">
+                                    <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
+                                        本店商品物美价廉欢迎选购！
+                                    </div>
+
+                                    <div class="tb-r-act-bar">
+                                        <textarea  id="d1"  cols="80" rows="3" autocomplete="off" placeholder="请输入您的评论" hidden></textarea>
+
+                                        <div class="am-btn am-btn-danger" style="float: right;margin-right: 50px" onclick="showdiv('d1')">评论</div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <!-- 评论内容 -->
+                        </div>
+                    </li>
+                    <li class="am-comment">
+                        <!-- 评论容器 -->
+                        <a href="">
+                            <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                            <!-- 评论者头像 -->
+                        </a>
+
+                        <div class="am-comment-main">
+                            <!-- 评论内容容器 -->
+                            <header class="am-comment-hd">
+                                <!--<h3 class="am-comment-title">评论标题</h3>-->
+                                <div class="am-comment-meta">
+                                    <!-- 评论元数据 -->
+                                    <a href="#link-to-user" class="am-comment-author">罗欣时尚</a>
+                                    <!-- 评论者 -->
+                                    发表于
+                                    <time datetime="">2020年03月02日 </time>
+                                </div>
+                            </header>
+
+                            <div class="am-comment-bd">
+                                <div class="tb-rev-item " data-id="255776406962">
+                                    <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
+                                        本店商品物美价廉欢迎选购！</div>
+
+                                    <div class="tb-r-act-bar">
+
+
+                                        <textarea  id="d2"  cols="80" rows="3" autocomplete="off" placeholder="请输入您的评论" hidden></textarea>
+
+                                        <div class="am-btn am-btn-danger" style="float: right;margin-right: 50px" onclick="showdiv('d2')">评论</div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <!-- 评论内容 -->
+                        </div>
+                    </li>
+                    <li class="am-comment">
+                            <!-- 评论容器 -->
+                            <a href="">
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <!-- 评论者头像 -->
+                            </a>
+
+                            <div class="am-comment-main">
+                                <!-- 评论内容容器 -->
+                                <header class="am-comment-hd">
+                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
+                                    <div class="am-comment-meta">
+                                        <!-- 评论元数据 -->
+                                        <a href="#link-to-user" class="am-comment-author">娇兰佳人</a>
+                                        <!-- 评论者 -->
+                                        发表于
+                                        <time datetime="">2020年03月02日 </time>
+                                    </div>
+                                </header>
+
+                                <div class="am-comment-bd">
+                                    <div class="tb-rev-item " data-id="255776406962">
+                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
+                                            本店商品物美价廉欢迎选购！ </div>
+
+                                        <div class="tb-r-act-bar">
+                                            <textarea  id="d3"  cols="80" rows="3" autocomplete="off" placeholder="请输入您的评论" hidden></textarea>
+
+                                            <div class="am-btn am-btn-danger" style="float: right;margin-right: 50px" onclick="showdiv('d3')">评论</div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <!-- 评论内容 -->
+                            </div>
+                        </li>
+
+
+                </ul>
+
+            </div>
+
+            <!--分页 -->
+            <ul class="am-pagination am-pagination-right">
+                <li class="am-disabled"><a href="#">&laquo;</a></li>
+                <li class="am-active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+
+        </div>
+        <!--底部-->
+        <div class="footer">
+            <div class="footer-hd">
+                <p>
+                    <a href="#">律小丫</a>
+                    <b>|</b>
+                    <a href="home.html">商城首页</a>
+                </p>
+            </div>
+            <div class="footer-bd">
+                <p>
+                    <em>©2020 成都泊涞名汇电子商务有限公司 蜀CP备19019695号</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<script>
+    $("[name='show']").hide();
+    var  username=checklogin();
+    if (username!="not"){
+        $("[name='login']").html('<a  >欢迎，'+username+'</a>')
+        $("[name='hide']").hide();
+        $("[name='show']").show();
+    }
+    function gotomain() {
+        window.location.href="home.html"
+    }
+</script>
+</html>

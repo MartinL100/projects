@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>万能求助圈</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="../layuiadmin/style/template.css" media="all">
+    <link rel="stylesheet" href="../css/cbat.css" media="all">
+    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script src="../js/msgInfo.js"></script>
+    <script src="../js/cbat.js"></script>
+    <script src="../layuiadmin/layui/layui.js"></script>
+</head>
+<body>
+
+
+<div class="layui-fluid layadmin-message-fluid">
+  <div class="layui-row">
+    <div class="layui-col-md12">
+        <div align="center" class = "cbat-head">
+            万能求助圈
+        </div>
+    </div>
+
+      <div class="layui-col-md12">
+          <form class="layui-form">
+              <div class="layui-form-item layui-form-text">
+                  <div class="layui-input-block">
+                      <textarea name="desc" id="descdom"  placeholder="发布您的求助信息" class="layui-textarea"></textarea>
+                  </div>
+              </div>
+
+              <div class="layui-form-item" style="overflow: hidden;">
+                  <div class="layui-input-block layui-input-right">
+                      <button class="layui-btn" lay-submit lay-filter="formDemo" >立即发布</button>
+                  </div>
+                  <!--<div class="layadmin-messag-icon">-->
+                  <!--<a href="javascript:;"><i class="layui-icon layui-icon-face-smile-b"></i></a>-->
+                  <!--<a href="javascript:;"><i class="layui-icon layui-icon-picture"></i></a>-->
+                  <!--<a href="javascript:;"><i class="layui-icon layui-icon-link"></i></a>-->
+                  <!--</div>-->
+              </div>
+          </form>
+          <div style="float: right;margin-right: 40px">
+          <button class="layui-btn"  onclick="jump('home.html')">返回主页</button></div>
+      </div>
+
+    <div class="layui-col-md12 layadmin-homepage-list-imgtxt message-content">
+        <div id="newMsg"></div>
+       <div class="media-body">
+          <a href="javascript:;" class="media-left" style="float: left;">
+             <img src="../images/t1.png" height="46px" width="46px">
+          </a>
+          <div class="pad-btm">
+            <p class="fontColor"><a href="javascript:;">乌拉拉</a></p>
+              <p class="fontColor">签名：随风飞翔有梦做翅膀</p>
+              <p class="fontColor">平台认证：已通过</p>
+              <!--此处可添加各种信息-->
+            <p class="min-font">
+              <span class="layui-breadcrumb" lay-separator="-">
+                <a href="javascript:;" class="layui-icon layui-icon-cellphone"></a>
+                2020-02-13
+                <a href="javascript:;">2020-03-29</a>
+              </span>
+            </p>         
+         </div>
+          <p class="message-text">我真的有严重拖延症
+
+              要加油啊
+
+              要加油备考啊
+
+              要减肥啊
+
+              感觉很久没有学习了
+
+              静不下心来学习
+
+              想想我大几千的考试费用
+
+              加油啊加油啊</p>
+
+           <div class="cbat-bar">
+               <div class="cbat-bar-3" style="margin-left: 5%" onclick="watch(1,this)">在看(100)</div>
+               <div class="cbat-bar-3" onclick="msgInfo(1,this,'我真的有严重拖延症\n'+
+'\n'+
+'要加油啊\n'+
+'\n'+
+'要加油备考啊\n'+
+'\n'+
+'要减肥啊\n'+
+'\n'+
+'感觉很久没有学习了\n'+
+'\n'+
+'静不下心来学习\n'+
+'\n'+
+'想想我大几千的考试费用\n'+
+'\n'+
+'加油啊加油啊')">评论(0)</div>
+               <div class="cbat-bar-3" onclick="zan(1,this)">点赞(11)</div>
+           </div>
+
+       </div>
+        <div class="media-body">
+            <a href="javascript:;" class="media-left" style="float: left;">
+                <img src="../images/t2.png" height="46px" width="46px">
+            </a>
+            <div class="pad-btm">
+                <p class="fontColor"><a href="javascript:;">隔壁老李</a></p>
+                <p class="fontColor">签名：随风飞翔有梦做翅膀</p>
+                <p class="fontColor">平台认证：已通过</p>
+                <!--此处可添加各种信息-->
+                <p class="min-font">
+              <span class="layui-breadcrumb" lay-separator="-">
+                <a href="javascript:;" class="layui-icon layui-icon-cellphone"></a>
+                2020-02-13
+                <a href="javascript:;">2020-02-29</a>
+              </span>
+                </p>
+            </div>
+            <p class="message-text">凌晨5点，被噩梦吓醒。清醒后，伤痛依然存在。
+
+                相互伤害真的不好。
+
+                今后不会在网络交任何朋友，尤其共同点很多的。
+
+                不要轻易动情。不要整有的没的。</p>
+
+            <div class="cbat-bar">
+                <div class="cbat-bar-3" style="margin-left: 5%" onclick="watch(2,this)">在看(200)</div>
+                <div class="cbat-bar-3" onclick="msgInfo(2,this,'凌晨5点，被噩梦吓醒。清醒后，伤痛依然存在。\n'+
+'\n'+
+'相互伤害真的不好。\n'+
+'\n'+
+'今后不会在网络交任何朋友，尤其共同点很多的。\n'+
+'\n'+
+'不要轻易动情。不要整有的没的。')">评论(0)</div>
+                <div class="cbat-bar-3" onclick="zan(2,this)">点赞(22)</div>
+            </div>
+
+        </div>
+        <div class="media-body">
+            <a href="javascript:;" class="media-left" style="float: left;">
+                <img src="../images/t3.png" height="46px" width="46px">
+            </a>
+            <div class="pad-btm">
+                <p class="fontColor"><a href="javascript:;">超甜的布丁</a></p>
+                <p class="fontColor">签名：随风飞翔有梦做翅膀</p>
+                <p class="fontColor">平台认证：已通过</p>
+                <!--此处可添加各种信息-->
+                <p class="min-font">
+              <span class="layui-breadcrumb" lay-separator="-">
+                <a href="javascript:;" class="layui-icon layui-icon-cellphone"></a>
+                2020-02-13
+                <a href="javascript:;">2020-02-29</a>
+              </span>
+                </p>
+            </div>
+            <p class="message-text">现在网络上的戾气越来越重，动不动就“艺术”。搞不懂为什么要这么狠，侮辱别人，诅咒家人。还有很多以“祖安”为荣，现在的教育水平不是越来好了吗？难道是网络的特性把人内心的黑暗释放出去了吗？</p>
+
+            <div class="cbat-bar">
+                <div class="cbat-bar-3" style="margin-left: 5%" onclick="watch(3,this)">在看(300)</div>
+                <div class="cbat-bar-3" onclick="msgInfo(3,this,'现在网络上的戾气越来越重，动不动就“艺术”。搞不懂为什么要这么狠，侮辱别人，诅咒家人。还有很多以“祖安”为荣，现在的教育水平不是越来好了吗？难道是网络的特性把人内心的黑暗释放出去了吗？')">评论(0)</div>
+                <div class="cbat-bar-3" onclick="zan(3,this)">点赞(29)</div>
+            </div>
+
+        </div>
+        <div class="media-body">
+            <a href="javascript:;" class="media-left" style="float: left;">
+                <img src="../images/photo8.png" height="46px" width="46px">
+            </a>
+            <div class="pad-btm">
+                <p class="fontColor"><a href="javascript:;">陪你演戏</a></p>
+                <p class="fontColor">签名：随风飞翔有梦做翅膀</p>
+                <p class="fontColor">平台认证：已通过</p>
+                <!--此处可添加各种信息-->
+                <p class="min-font">
+              <span class="layui-breadcrumb" lay-separator="-">
+                <a href="javascript:;" class="layui-icon layui-icon-cellphone"></a>
+                2020-02-13
+                <a href="javascript:;">2020-02-13</a>
+              </span>
+                </p>
+            </div>
+            <p class="message-text">有时候会到这个小破站看看大家的秘密，陌生人的安慰总是很温暖的，感觉像是给自己心留了一点小小的角落。</p>
+
+            <div class="cbat-bar">
+                <div class="cbat-bar-3" style="margin-left: 5%" onclick="watch(4,this)">在看(430)</div>
+                <div class="cbat-bar-3" onclick="msgInfo(4,this,'有时候会到这个小破站看看大家的秘密，陌生人的安慰总是很温暖的，感觉像是给自己心留了一点小小的角落。')">评论(0)</div>
+                <div class="cbat-bar-3" onclick="zan(4,this)">点赞(30)</div>
+            </div>
+
+        </div>
+        <div class="media-body">
+            <a href="javascript:;" class="media-left" style="float: left;">
+                <img src="../images/t4.png" height="46px" width="46px">
+            </a>
+            <div class="pad-btm">
+                <p class="fontColor"><a href="javascript:;">益达学妹</a></p>
+                <p class="fontColor">平台认证：已通过</p>
+                <!--此处可添加各种信息-->
+                <p class="min-font">
+              <span class="layui-breadcrumb" lay-separator="-">
+                <a href="javascript:;" class="layui-icon layui-icon-cellphone"></a>
+
+                <a href="javascript:;">小潘</a>
+              </span>
+                </p>
+            </div>
+            <p class="message-text">在这里打卡自己的改变吧（30天计划）
+
+                今天是Day0
+
+                加油加油加油！</p>
+
+            <div class="cbat-bar">
+                <div class="cbat-bar-3" style="margin-left: 5%" onclick="watch(5,this)">在看(20)</div>
+                <div class="cbat-bar-3" onclick="msgInfo(5,this,'在这里打卡自己的改变吧（30天计划）\n'+
+'\n'+
+'今天是Day0\n'+
+'\n'+
+'加油加油加油！')">评论(0)</div>
+                <div class="cbat-bar-3" onclick="zan(5,this)">点赞(0)</div>
+            </div>
+
+        </div>
+     </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <script></script>
+  <script>
+  layui.config({
+    base: '../layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use(['index']);
+  layui.use(['layer','form'],function(){
+    var form = layui.form;
+    form.on('submit(formDemo)', function(data){
+      // layer.msg(JSON.stringify(data.field));
+        addMsg(data.field)
+      return false;
+    });
+  })
+  </script>
+</body>
+</html>

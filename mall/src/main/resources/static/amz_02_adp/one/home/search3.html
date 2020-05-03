@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>搜索页面</title>
+
+		<link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+		<link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
+
+		<link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
+
+		<link href="../css/seastyle.css" rel="stylesheet" type="text/css" />
+
+		<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="../js/script.js"></script>
+		<script src="../js/changecookie.js"></script>
+		<script src="../js/myjson.js"></script>
+	</head>
+    <script>
+        function request(params) {
+            var url = location.href;
+            var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+            var paraObj = { };
+            for (i = 0; j = paraString[i]; i++) {
+                paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+            }
+            var returnValue = paraObj[params.toLowerCase()];
+            if (typeof (returnValue) == "undefined") {
+                return "";
+            } else {
+                return returnValue;
+            }
+        }
+        var parms=decodeURI(request("parm"));
+        $("#searchInput").val(""+decodeURI(request("parm")));
+
+    </script>
+	<body>
+
+		<!--顶部导航条 -->
+		<div class="am-container header">
+			<ul class="message-l">
+				<div class="topMessage">
+						<div class="menu-hd" name="login" >
+							<a href="login.html" >亲，请登录</a>
+							<a href="register.html" target="_top">免费注册</a>
+						</div>
+				</div>
+			</ul>
+			<ul class="message-r">
+				<div class="topMessage home">
+					<div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
+				</div>
+				<div class="topMessage my-shangcheng">
+					<div class="menu-hd MyShangcheng"><a href="information.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+				</div>
+				<div class="topMessage mini-cart">
+					<div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
+				</div>
+				<div class="topMessage favorite">
+					<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
+                </div>
+            </ul>
+			</div>
+
+			<!--悬浮搜索框-->
+
+			<div class="nav white">
+				<div class="logo"><img src="../images/logo.png" /></div>
+				<div class="logoBig">
+					<li><img src="../images/sb1.png" /></li>
+				</div>
+<!--                <div style="height: 70px;width: 200px;position: absolute;margin-top:10px;   background: url(../images/clockbg.png) repeat;  ">-->
+<!--                    </br>-->
+<!--                    <a style="alignment: center;font-size: 19px;color: white;">&nbsp;&nbsp;&nbsp;&nbsp;娇兰佳人</a>-->
+<!--                    <a style="font-size: 19px;color: white;">化妆品</a>-->
+<!--                </div>-->
+
+				<div class="search-bar pr">
+					<a name="index_none_header_sysc" href="#"></a>
+					<form>
+						<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+						<input id="ai-topsearch" class="submit am-btn"  value="搜索" index="1" type="submit">
+					</form>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+			<b class="line"></b>
+           <div class="search">
+			<div class="search-list">
+			<div class="nav-table">
+					   <div class="long-title"><span class="all-goods">全部分类</span></div>
+					   <div class="nav-cont">
+							<ul>
+								<li class="index"><a href="home.html">首页</a></li>
+
+							</ul>
+
+						</div>
+			</div>
+
+                <div style="width: 290px;height: 500px;left: 1000px;top:85px;position: absolute;z-index: 99">
+                    <div style="margin: 20px 20px; " hidden>
+                        <li><img src="../images/sb1.png" style="width: 150px;height: 80px" /></li>  <p/>
+                        <li>  <span class="total fl" style="font-size: 15px">幸福兔韩妆店</span></li>  <p/>
+                        <div style="height: 30px"></div>
+                        <li>  <span class="total fl" style="font-size: 15px">商家信息</span></li>  <p/>
+
+
+
+
+
+                        <table style="border:0;margin-top: 20px">
+
+
+                            <tr style="height: 40px">
+                                <td style="width: 100px">所在地：</td>
+                                <td style="width: 65px;text-align: right">四川省成都市</td>
+                            </tr>
+
+                            <tr style="height: 40px">
+                                <td style="width: 100px">掌柜名：</td>
+                                <td style="width: 65px;text-align: right">幸福兔韩</td>
+                            </tr>
+                            <tr style="height: 40px">
+                                <td style="width: 100px">资质：</td>
+                                <td style="width: 165px;text-align: right">已签署消保协议</td>
+                            </tr>
+                            <tr style="height: 40px">
+                                <td style="width: 100px">企业资质：</td>
+                                <td style="width: 165px;text-align: right">营业执照</td>
+                            </tr>
+                            <tr style="height: 40px">
+                                <td style="width: 100px">开店时间：</td>
+                                <td style="width: 165px;text-align: right">2019-08-23</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div style="width: 280px;height: 380px;background-image: url(../images/shangjia33.png); ">
+                        <img />
+                    </div>
+                    <a  style="left: 80px;top:-165px;position: relative; "id="clc" onclick="showkefu()">
+                        <img  src="../images/kefu.png" style="width: 30px;height: 30px;CURSOR: hand" hidden/>
+                    </a>
+
+                    <img  id="kefu" src="../images/duihua2.png" hidden/>
+
+
+                    <script type="text/javascript">
+                        $("#clc").click(function () {
+                            $("#kefu").show();
+                        });
+
+                    </script>
+                </div>
+
+				
+					<div class="am-g am-g-fixed">
+						<div class="am-u-sm-12 am-u-md-12">
+	                  	<div class="theme-popover" >
+
+							<ul class="select">
+								<p class="title font-normal">
+									<span class="fl" id="tiaojian"></span>
+									<span class="total fl" style="font-size: 19px">幸福兔韩妆店</span>
+								</p>
+
+							</ul>
+							<div class="clear"></div>
+                        </div>
+							<div class="search-content">
+								<div class="sort">
+									<li class="first"><a title="综合">综合排序</a></li>
+									<li><a title="销量">销量排序</a></li>
+									<li><a title="价格">价格优先</a></li>
+									<li class="big"><a title="评价" href="#">评价为主</a></li>
+								</div>
+								<div class="clear"></div>
+
+								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes" id="mainhtml">
+
+
+								</ul>
+							</div>
+
+							<div class="clear"></div>
+							<!--分页 -->
+							<ul class="am-pagination am-pagination-right" id="page">
+                                <li class="am-disabled"><a href="#">&laquo;</a></li>
+                                <li class="am-active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">&raquo;</a></li>
+							</ul>
+
+						</div>
+					</div>
+					<div class="footer">
+						<div class="footer-hd">
+							<p>
+								<a href="home.html">律小丫</a>
+									<b>|</b>
+									<a href="home.html">商城首页</a>
+							</p>
+						</div>
+						<div class="footer-bd">
+							<p>
+								<a href="home.html">关于律小丫</a>
+								<a href="liuyan.html">合作伙伴</a>
+								<a href="liuyan.html">联系我们</a>
+
+								<em>©2020 成都泊涞名汇电子商务有限公司 蜀CP备19019695号</em>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		<!--引导 -->
+		<div class="navCir">
+			<li><a href="home.html"><i class="am-icon-home "></i>首页</a></li>
+			<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
+			<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
+			<li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a></li>					
+		</div>
+
+
+
+
+<div class="theme-popover-mask"></div>
+
+	</body>
+    <script>
+        // var request = new XMLHttpRequest();
+        // request.open("get", "../json/productinfo.json");
+        // request.send(null);
+        // request.onload = function () {
+        //     var json = JSON.parse(request.responseText);
+		var json=productinfo;
+		searchsth(json,parms)
+
+        // }
+
+
+    function searchsth(json,parm ) {
+            var htmlstr=''
+            var num=0;
+            for (var key in json){
+
+                    if (json[key].name.indexOf(parm) != -1) {
+                        if(num>19) {
+                        htmlstr += '<li><a href="introduction.html?id=' + json[key].id + '">' +
+                            '<div class="i-pic limit"><img src="../images/' + json[key].photo + '.png" />' +
+                            '<p class="title fl">' + json[key].name + '</p>' +
+                            '<p class="price fl"><b>¥</b><strong>' + json[key].price + '</strong>' +
+                            '</p><p class="number fl">销量<span>' + parseInt(Math.random() * 100) + '</span></p></div></a></li>  ';
+                    }
+                        num++
+                }
+            }
+
+            $("#num").text(num);
+            $("#tiaojian").text(parm);
+            $("#mainhtml").html(htmlstr);
+
+        // var pagehtml='<li class="am-disabled"><a href="#">&laquo;</a></li><li class="am-active"><a href="#">1</a></li>'
+        //
+        // for(var i=0;i<num/20;i++){
+        //     num=num-20;
+        //     while (num>0)  {
+        //         pagehtml+='<li><a href="#">'+(i+2)+'</a></li>';
+        //     }
+        // }
+        // pagehtml+='<li><a href="#">&raquo;</a></li>';
+        //
+        // $("#page").html(pagehtml);
+
+
+    }
+
+    </script>
+    <script type="text/javascript" src="../basic/js/quick_links.js"></script>
+</html>

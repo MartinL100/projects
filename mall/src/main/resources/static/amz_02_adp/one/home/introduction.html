@@ -12,14 +12,15 @@
 		<link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
 		<link type="text/css" href="../css/optstyle.css" rel="stylesheet" />
 		<link type="text/css" href="../css/style.css" rel="stylesheet" />
-
 		<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="../basic/js/quick_links.js"></script>
-
 		<script type="text/javascript" src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>
 		<script type="text/javascript" src="../js/jquery.imagezoom.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.flexslider.js"></script>
 		<script type="text/javascript" src="../js/list.js"></script>
+		<script src="../js/changecookie.js"></script>
+		<script src="../js/myjson.js"></script>
+
         <script>
             function request(params) {
                 var url = location.href;
@@ -35,44 +36,7 @@
                     return returnValue;
                 }
             }
-            var parms=decodeURI(request("id"));
-            var request = new XMLHttpRequest();
-            request.open("get", "../json/productinfo.json");
-            request.send(null);
-            request.onload = function () {
-                var json = JSON.parse(request.responseText);
-                searchsth(json,parms)
-            }
 
-            function searchsth(json,parm ) {
-                var htmlstr=''
-                var num=0;
-                for (var key in json){
-                    if (json[key].id==parm) {
-                        $("[name='photo']").attr("src","../images/"+json[key].photo+".png")
-                        $("#pname").text(json[key].name);
-                        $("#price").text(json[key].price);
-                    }
-                }
-
-                $("#num").text(num);
-                $("#tiaojian").text(parm);
-                $("#mainhtml").html(htmlstr);
-
-                // var pagehtml='<li class="am-disabled"><a href="#">&laquo;</a></li><li class="am-active"><a href="#">1</a></li>'
-                //
-                // for(var i=0;i<num/20;i++){
-                //     num=num-20;
-                //     while (num>0)  {
-                //         pagehtml+='<li><a href="#">'+(i+2)+'</a></li>';
-                //     }
-                // }
-                // pagehtml+='<li><a href="#">&raquo;</a></li>';
-                //
-                // $("#page").html(pagehtml);
-
-
-            }
         </script>
 	</head>
 
@@ -83,10 +47,10 @@
 		<div class="am-container header">
 			<ul class="message-l">
 				<div class="topMessage">
-					<div class="menu-hd">
-						<a href="#" target="_top" class="h">亲，请登录</a>
-						<a href="#" target="_top">免费注册</a>
-					</div>
+						<div class="menu-hd" name="login" >
+							<a href="login.html" >亲，请登录</a>
+							<a href="register.html" target="_top">免费注册</a>
+						</div>
 				</div>
 			</ul>
 			<ul class="message-r">
@@ -94,6 +58,9 @@
 					<div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
 				</div>
 
+				<div class="topMessage my-shangcheng">
+					<div class="menu-hd MyShangcheng"><a href="information.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+				</div>
 				<div class="topMessage mini-cart">
 					<div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
 				</div>
@@ -102,21 +69,29 @@
 			</ul>
 			</div>
 
-			<!--悬浮搜索框-->
+		<!--悬浮搜索框-->
 
-			<div class="nav white">
-				<div class="logo"><img src="../images/logo.png" /></div>
-				<div class="logoBig">
-					<li><img src="../images/logobig.png" /></li>
-				</div>
-				<div class="search-bar pr">
-					<a name="index_none_header_sysc" href="#"></a>
-					<form>
-						<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-						<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-					</form>
-				</div>
+		<div class="nav white">
+			<div class="logo"><img src="../images/logo.png" /></div>
+			<div class="logoBig">
+				<li><img src="../images/logobig.png" /></li>
 			</div>
+
+			<div class="search-bar pr">
+				<a id="parm" name="index_none_header_sysc" href="search.html"></a>
+				<form>
+					<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+					<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1"  onclick="go()">
+				</form>
+			</div>
+		</div>
+		<script>
+			function go() {
+				$("#parm").attr("href","search.html?parm="+$("#searchInput").val())
+				window.location.href="search.html?parm="+$("#searchInput").val()
+			}
+
+		</script>
 
 			<div class="clear"></div>
             <b class="line"></b>
@@ -127,7 +102,9 @@
 					   <div class="long-title"><span class="all-goods">全部分类</span></div>
 					   <div class="nav-cont">
 							<ul>
-								<li class="index"><a href="#">首页</a></li>
+								<li class="index"><a href="home.html">首页</a></li>
+								<li class="qc last"><a href="shangjia.html">商家入驻</a></li>
+								<li class="qc last"><a href="liuyan.html">在线留言</a></li>
 
 							</ul>
 
@@ -138,17 +115,6 @@
 					<li><a href="#">分类</a></li>
 					<li class="am-active">内容</li>
 				</ol>
-				<script type="text/javascript">
-					$(function() {});
-					$(window).load(function() {
-						$('.flexslider').flexslider({
-							animation: "slide",
-							start: function(slider) {
-								$('body').removeClass('loading');
-							}
-						});
-					});
-				</script>
 				<div class="scoll">
 					<section class="slider">
 						<div class="flexslider">
@@ -173,19 +139,8 @@
 					<div class="clearfixLeft" id="clearcontent">
 
 						<div class="box">
-							<script type="text/javascript">
-								$(document).ready(function() {
-									$(".jqzoom").imagezoom();
-									$("#thumblist li a").click(function() {
-										$(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
-										$(".jqzoom").attr('src', $(this).find("img").attr("mid"));
-										$(".jqzoom").attr('rel', $(this).find("img").attr("big"));
-									});
-								});
-							</script>
-
 							<div class="tb-booth tb-pic tb-s310">
-								<a ><img   alt="细节展示放大镜特效"  name="photo" class="jqzoom" /></a>
+								<a ><img   name="photo" class="jqzoom" /></a>
 							</div>
 
 						</div>
@@ -299,8 +254,9 @@
 							<!--活动	-->
 							<div class="shopPromotion gold">
 								<div class="hot">
-									<dt class="tb-metatit">店铺优惠</dt>
-
+								
+								<a href="search1.html" ><h4>娇兰佳人化妆品店</h4></a>
+					
 								</div>
 								<div class="clear"></div>
 							
@@ -311,24 +267,19 @@
 							<div class="pay-opt">
 							<a href="home.html"><span class="am-icon-home am-icon-fw">首页</span></a>
 							<a><span class="am-icon-heart am-icon-fw">收藏</span></a>
-
 							</div>
 							<li>
 								<div class="clearfix tb-btn tb-btn-buy theme-login">
-									<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+									<a id="LikBuy" title="点此按钮到下一步确认购买信息" onclick="buy(id)" href="#">立即购买</a>
 								</div>
 							</li>
 							<li>
 								<div class="clearfix tb-btn tb-btn-basket theme-login">
-									<a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+									<a  title="加入购物车"  onclick="addcar()"><i></i>加入购物车</a>
 								</div>
 							</li>
 						</div>
-
 					</div>
-
-					<div class="clear"></div>
-
 				</div>
 
 
@@ -873,22 +824,20 @@
 						<div class="footer">
 							<div class="footer-hd">
 								<p>
-									<a href="#">律小丫</a>
+									<a href="home.html">律小丫</a>
 									<b>|</b>
-									<a href="#">商城首页</a>
+									<a href="home.html">商城首页</a>
 									<b>|</b>
-									<a href="#">支付宝</a>
-									<b>|</b>
-									<a href="#">物流</a>
+
 								</p>
 							</div>
 							<div class="footer-bd">
 								<p>
-									<a href="#">关于律小丫</a>
-									<a href="#">合作伙伴</a>
-									<a href="#">联系我们</a>
-									<a href="#">网站地图</a>
-									<em>© </em>
+									<a href="home.html">关于律小丫</a>
+									<a href="liuyan.html">合作伙伴</a>
+									<a href="liuyan.html">联系我们</a>
+
+									<em>©2020 成都泊涞名汇电子商务有限公司 蜀CP备19019695号</em>
 								</p>
 							</div>
 						</div>
@@ -899,5 +848,51 @@
 
 
 	</body>
+	<script>
+		$("[name='show']").hide();
+		var  username=checklogin();
+		if (username!="not"){
+			$("[name='login']").html('<a  >欢迎，'+username+'</a>')
+			$("[name='hide']").hide();
+			$("[name='show']").show();
+		}
 
+		var parms=decodeURI(request("id"));
+		// var request = new XMLHttpRequest();
+		// request.open("get", "../json/productinfo.json");
+		// request.send(null);
+		// request.onload = function () {
+		// 	var json = JSON.parse(request.responseText);
+		var json =productinfo
+			searchsth(json,parms)
+		// }
+		var product;
+
+		function searchsth(json,parm ) {
+			var htmlstr=''
+			var num=0;
+			for (var key in json){
+				if (json[key].id==parm) {
+					product=json[key];
+					$("[name='photo']").attr("src","../images/"+json[key].photo+".png")
+					$("#pname").text(json[key].name);
+					$("#price").text(json[key].price);
+				}
+			}
+			product.num=1;
+			$("#num").text(num);
+			$("#tiaojian").text(parm);
+			$("#mainhtml").html(htmlstr);
+		}
+
+		function deal() {
+
+		}
+		function addcar() {
+
+			changecar(product);
+			gocar();
+		}
+
+	</script>
 </html>

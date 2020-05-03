@@ -9,9 +9,7 @@
 
 		<link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
-
 		<link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
-
 		<link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
 		<link href="../css/skin.css" rel="stylesheet" type="text/css" />
 		<script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
@@ -23,7 +21,7 @@
         <script src="../js/address.js"></script>
         <script src="../js/jquery-1.7.2.min.js"></script>
         <script src="../js/script.js"></script>
-
+		<script src="../js/myjson.js"></script>
 	</head>
 
 	<body>
@@ -32,10 +30,11 @@
 			<div class="am-container header">
 				<ul class="message-l">
 					<div class="topMessage">
-						<div class="menu-hd">
-							<a href="login.html" target="_top" class="h">亲，请登录</a>
-							<a href="#" target="_top">免费注册</a>
+						<div class="menu-hd" name="login" >
+							<a href="login.html" >亲，请登录</a>
+							<a href="register.html" target="_top">免费注册</a>
 						</div>
+
 					</div>
 				</ul>
 				<ul class="message-r">
@@ -43,14 +42,16 @@
 						<div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
 					</div>
 					<div class="topMessage my-shangcheng">
-						<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+						<div class="menu-hd MyShangcheng"><a onclick="geren()" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心
+                        </a></div>
 					</div>
 					<div class="topMessage mini-cart">
-						<div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
+						<div class="menu-hd"><a id="mc-menu-hd" onclick="gocar()" target="_top"><i
+                                class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
 					</div>
 					<div class="topMessage favorite">
 						<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-				</ul>
+                    </div></ul>
 				</div>
 
 				<!--悬浮搜索框-->
@@ -85,7 +86,6 @@
 							<ul class="am-slides">
 								<li class="banner1"><a href="introduction.html"><img src="../images/banner1.png" /></a></li>
 								<li class="banner2"><a><img src="../images/banner2.png" /></a></li>
-								<li class="banner3"><a><img src="../images/banner3.jpg" /></a></li>
 							</ul>
 						</div>
 						<div class="clear"></div>	
@@ -96,10 +96,10 @@
 					   <div class="long-title"><span class="all-goods">全部分类</span></div>
 					   <div class="nav-cont">
 							<ul>
-								<li class="index"><a href="#">首页</a></li>
-                                <li class="qc"><a href="#">闪购</a></li>
-                                <li class="qc"><a href="#">限时抢</a></li>
-                                <li class="qc last"><a href="#">商家入驻</a></li>
+								<li class="index"><a href="home.html">首页</a></li>
+								<li class="qc last"><a href="shangjia.html">商家入驻</a></li>
+								<li class="qc last"><a href="liuyan.html">在线留言</a></li>
+                                <li class="qc last"><a href="msgboard.html">发布信息</a></li>
 							</ul>
 
 						</div>
@@ -260,18 +260,28 @@
 							</div>
 						</div>
 
+	<div class="row">
+					<li><a><img src="../images/row1.jpg"/></a></li>
+					<li><a><img src="../images/row2.jpg"/></a></li>
+					<li><a><img src="../images/row3.jpg"/></a></li>
+					<li><a><img src="../images/row4.jpg"/></a></li>
+				</div>
+
+
                     <script>
                         var str1="<dt><span title='热销产品'>热销产品</span></dt>";
                         var str2="<dt><span title='热销产品'>热销产品</span></dt>";
                         var str3="<dt><span title='热销产品'>热销产品</span></dt>";
                         var str4="<dt><span title='热销产品'>热销产品</span></dt>";
                         var str5="<dt><span title='热销产品'>热销产品</span></dt>";
-                        var request = new XMLHttpRequest();
-                        request.open("get", "../json/secondtype.json");
-                        request.send(null);
-                        request.onload = function () {
-                            var json = JSON.parse(request.responseText);
+                        // var request = new XMLHttpRequest();
+                        // request.open("get", "../json/secondtype.json");
+                        // request.send(null);
+                        // request.onload = function () {
+                        //     var json = JSON.parse(request.responseText);
+						var json=secondtype;
                             for (var key in json) {
+                            	var json=secondtype;
                                 if(json[key].type=='护肤'){
                                     str1+="<dd><a title='"+json[key].value+"' href='list.html?id="+json[key].value+"'><span>"+json[key].value+"</span></a></dd>"
                                 }
@@ -290,10 +300,7 @@
                             }
 
                             $("#ds1").html(str1);$("#ds2").html(str2);$("#ds3").html(str3);$("#ds4").html(str4);$("#ds5").html(str5);
-                        }
-
-
-
+                        // }
 
 
                     </script>
@@ -357,14 +364,18 @@
 									<img src="../images/getAvatar.do.jpg">
 								</a>
 								<em>
-									Hi,<span class="s-name">小叮当</span>
+									<span class="s-name" name="login" >请登录</span>
 									<a href="#"><p>点击更多优惠活动</p></a>
 								</em>
 							</div>
-							<div class="member-logout">
+							<div class="member-logout" name="hide">
 								<a class="am-btn-warning btn" href="login.html">登录</a>
 								<a class="am-btn-warning btn" href="register.html">注册</a>
 							</div>
+							<div class="member-logout" name="show" >
+								<a class="am-btn-warning btn" href="login.html" onclick="quit()">退出</a>
+							</div>
+
 							<div class="member-login">
 								<a href="#"><strong>0</strong>待收货</a>
 								<a href="#"><strong>0</strong>待发货</a>
@@ -403,7 +414,49 @@
 			</div>
 			<div class="shopMainbg">
 				<div class="shopMain" id="shopmain">
+	<!--今日推荐 -->
 
+					<div class="am-g am-g-fixed recommendation">
+						<div class="clock am-u-sm-3 ">
+							
+							<p>今日热门商家</p>
+						</div>
+						<div class="am-u-sm-4 am-u-lg-3 ">
+                            <a href="search2.html">
+							<div class="info " >
+								<h3>罗欣时尚品牌化妆品</h3>
+								<h4>开年福利篇</h4>
+							</div>
+							<div class="recommendationMain ">
+								<img src="../images/photo22.png "></img>
+							</div>
+                            </a>
+						</div>						
+						<div class="am-u-sm-4 am-u-lg-3 ">
+                            <a href="search1.html">
+							<div class="info ">
+								<h3>娇兰佳人化妆品店</h3>
+								<h4>焕发年轻活力</h4>
+							</div>
+							<div class="recommendationMain ">
+								<img src="../images/xs2.png "></img>
+							</div>
+                            </a>
+						</div>
+						<div class="am-u-sm-4 am-u-lg-3 ">
+                            <a href="search3.html">
+							<div class="info ">
+								<h3>幸福兔韩妆店</h3>
+								<h4>美丽每一天</h4>
+							</div>
+							<div class="recommendationMain ">
+								<img src="../images/hj3.png "></img>
+							</div>
+                            </a>
+						</div>
+
+					</div>
+					<div class="clear "></div>
 
                     <div id="f1">
 
@@ -657,22 +710,30 @@
 					<div class="footer ">
 						<div class="footer-hd ">
 							<p>
-								<a href="# ">律小丫</a>
-								<b>|</b>
-								<a href="# ">商城首页</a>
-								<b>|</b>
-								<a href="# ">支付宝</a>
-								<b>|</b>
-								<a href="# ">物流</a>
+									<a href="home.html">律小丫</a>
+									<b>|</b>
+									<a href="home.html">商城首页</a>
+										<b>|</b>
+									<a href="home.html">热门商家</a>
+									<b>|</b>
+									<a href="">美丽人生精品坊</a>
+									<a href="">罗欣时尚品牌化妆品</a>
+									<a href="">娇兰佳人化妆品店</a>
+									<a href="">嘉多丽美妆屋</a>
+									<a href="">幸福兔韩妆店</a>
+									<a href="">零度韩妆</a>
+									
 							</p>
 						</div>
+						
+							
+						
 						<div class="footer-bd ">
 							<p>
-								<a href="# ">关于律小丫</a>
-								<a href="# ">合作伙伴</a>
-								<a href="# ">联系我们</a>
-								<a href="# ">网站地图</a>
-								<em>© </em>
+								<a href="home.html">关于律小丫</a>
+								<a href="liuyan.html">合作伙伴</a>
+								<a href="liuyan.html">联系我们</a>
+								<em>©2020 成都泊涞名汇电子商务有限公司 蜀CP备19019695号</em>
 							</p>
 						</div>
 					</div>
@@ -688,6 +749,15 @@
 		</div>
 
 
+		<script>
+			$("[name='show']").hide();
+			var  username=checklogin();
+			if (username!="not"){
+				$("[name='login']").html('<a  >欢迎，'+username+'</a>')
+				$("[name='hide']").hide();
+				$("[name='show']").show();
+			}
+		</script>
 
 
 		<script type="text/javascript " src="../basic/js/quick_links.js "></script>
