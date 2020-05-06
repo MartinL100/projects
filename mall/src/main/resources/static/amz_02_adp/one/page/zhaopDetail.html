@@ -49,7 +49,12 @@
 </div>
 <div class="cb">
     <div class="warp">
-        <div class="con"><div class="bread"><span class="zp_crumb"><em class="crumb_item" href="javascript:;">成都销售招聘</em>  <span class="crumb_item">&nbsp;&gt;&nbsp;</span><em class="crumb_item" href="javascript:;">天府新区销售招聘</em>  <span class="crumb_item">&nbsp;&gt;&nbsp;</span><em class="crumb_item" href="javascript:;">四河销售招聘</em>  </span></div><div class="operate_bar_mask"> &nbsp;</div><div class="leftCon"><div class="item_con pos_info"> <div class="pos_base_statistics"><span class="pos_base_num pos_base_update"> 更新:  <span>今天</span>  </span><span class="pos_base_num pos_base_browser">浏览:<i id="totalcount">1102</i>人</span><span class="pos_base_num pos_base_apply">申请:<span id="apply_num">52</span>人</span>  </div><div class="pos_base_info"><span class="pos_title"> 网络销售</span>  <span class="pos_salary">8000-12000<span class="font18">元/月</span></span>  </div><span class="pos_name"> </span>  <div class="pos_welfare">  <span class="pos_welfare_item">五险一金</span>  <span class="pos_welfare_item">包住</span>  <span class="pos_welfare_item">周末双休</span>  <span class="pos_welfare_item">年底双薪</span>  <span class="pos_welfare_item">房补</span>  </div>  <div class="pos_base_condition"><span class="item_condition pad_left_none">  招5人 </span><span class="item_condition">学历不限</span><span class="item_condition border_right_None"> 经验不限 </span></div><div class="pos-area"><span class="pos_area_span pos_address"><i class="icon iconfont icon_dingwei"></i>  <span class="pos_area_item">成都</span>  -  <span class="pos_area_item">天府新区</span>  -  <span class="pos_area_item">四河</span>   </span><span>成都天府新区四河大道牛栏前大厦C705</span>    </div> <div class="pos_operate">
+        <div class="con"><div class="bread"><span class="zp_crumb"><em class="crumb_item" href="javascript:;">成都销售招聘</em>  <span class="crumb_item">&nbsp;&gt;&nbsp;</span><em class="crumb_item" href="javascript:;">天府新区销售招聘</em>  <span class="crumb_item">&nbsp;&gt;&nbsp;</span><em class="crumb_item" href="javascript:;">四河销售招聘</em>  </span></div><div class="operate_bar_mask"> &nbsp;</div><div class="leftCon"><div class="item_con pos_info"> <div class="pos_base_statistics"><span class="pos_base_num pos_base_update"> 更新:  <span>今天</span>  </span><span class="pos_base_num pos_base_browser">浏览:<i id="totalcount">1102</i>人</span><span class="pos_base_num pos_base_apply">申请:<span id="apply_num">52</span>人</span>  </div><div class="pos_base_info"><span class="pos_title"> 网络销售</span>  <span class="pos_salary">8000-12000<span class="font18">元/月</span></span>  </div><span class="pos_name"> </span>  <div class="pos_welfare">  <span class="pos_welfare_item">五险一金</span>  <span class="pos_welfare_item">包住</span>  <span class="pos_welfare_item">周末双休</span>  <span class="pos_welfare_item">年底双薪</span>  <span class="pos_welfare_item">房补</span>  </div>  <div class="pos_base_condition"><span class="item_condition pad_left_none">  招5人 </span><span class="item_condition">学历不限</span><span class="item_condition border_right_None"> 经验不限 </span></div><div class="pos-area"><span class="pos_area_span pos_address"><i class="icon iconfont icon_dingwei"></i>
+
+
+        <span id="area"></span>
+
+        </div> <div class="pos_operate">
 
             <a class="btn btn-orange btn-large applyJobBtn" style="background: #f85415; " onclick="test()">申请职位</a>
 
@@ -123,13 +128,16 @@
             $("#p1").html(p1_1);
             $("#p2").html(p1_2);
             $("#photo").html('<img src="../images/gss1.png"   />')
+            $("#area").html(p1_3)
         }else if(gs=='正辉网络'){
             $("#p1").html(p2_1);
             $("#p2").html(p2_2);
             $("#photo").html('<img src="../images/gss2.png" style="width: 90%"  />')
+            $("#area").html(p2_3)
         }else{
             $("#p1").html(p3_1);
-            $("#p2").html(p3_2);
+            $("#p2").html(p3_2);  $("#area").html(p3_3)
+
             $("#photo").html('<img src="../images/gss3.png"  />')
         }
 
