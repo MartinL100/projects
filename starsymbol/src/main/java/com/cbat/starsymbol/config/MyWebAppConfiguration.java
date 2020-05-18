@@ -26,7 +26,8 @@ public class MyWebAppConfiguration implements WebMvcConfigurer {
                 .addPathPatterns("/**")//添加拦截路径
                 .excludePathPatterns("/static/**")  //排除拦截路径
                 .excludePathPatterns("/src/**")  ;//排除拦截路径
-
+//        registry.addInterceptor(new CbatMonitorInterceptor())
+//                .addPathPatterns("/**");//添加拦截路径
 
     }
 

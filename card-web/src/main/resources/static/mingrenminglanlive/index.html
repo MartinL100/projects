@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>名人名兰</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+
+    <!-- jQuery -->
+    <script src="js/jquery-2.1.1.js"></script>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+</head>
+
+<body>
+<header>
+    <!--Top-->
+    <nav id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <strong id = "welcome">欢迎来到名人名兰</strong>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <ul class="list-inline top-link link">
+                        <li><a href="index.html"><i class="fa fa-home"></i> 主页</a></li>
+                        <li><a href="page/login.html"><i class="fa fa-comments"></i> 登录</a></li>
+                        <li><a href="page/register.html"><i class="fa fa-question-circle"></i> 注册</a></li>
+                         <li><a href="page/xieyi.html"><i class="fa fa-question-circle"></i> 家长监护</a></li>
+                         <li id="contract"><a href="#bottom"><i class="fa fa-question-circle"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navigation-->
+    <!--    <nav id="menu" class="navbar">-->
+    <!--		<div class="container">-->
+    <!--			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>-->
+    <!--			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>-->
+    <!--			</div>-->
+    <!--			<div class="collapse navbar-collapse navbar-ex1-collapse">-->
+    <!--				<ul class="nav navbar-nav">-->
+    <!--					<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>-->
+    <!--					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Account</a>-->
+    <!--						<div class="dropdown-menu">-->
+    <!--							<div class="dropdown-inner">-->
+    <!--								<ul class="list-unstyled">-->
+    <!--									<li><a href="archive.html">Login</a></li>-->
+    <!--									<li><a href="archive.html">Register</a></li>-->
+    <!--								</ul>-->
+    <!--							</div>-->
+    <!--						</div>-->
+    <!--					</li>-->
+    <!--					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-play-circle-o"></i> Video</a>-->
+    <!--						<div class="dropdown-menu">-->
+    <!--							<div class="dropdown-inner">-->
+    <!--								<ul class="list-unstyled">-->
+    <!--									<li><a href="archive.html">Text 201</a></li>-->
+    <!--									<li><a href="archive.html">Text 202</a></li>-->
+    <!--									<li><a href="archive.html">Text 203</a></li>-->
+    <!--									<li><a href="archive.html">Text 204</a></li>-->
+    <!--									<li><a href="archive.html">Text 205</a></li>-->
+    <!--								</ul>-->
+    <!--							</div> -->
+    <!--						</div>-->
+    <!--					</li>-->
+    <!--					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i> Category</a>-->
+    <!--						<div class="dropdown-menu" style="margin-left: -203.625px;">-->
+    <!--							<div class="dropdown-inner">-->
+    <!--								<ul class="list-unstyled">-->
+    <!--									<li><a href="archive.html">Text 301</a></li>-->
+    <!--									<li><a href="archive.html">Text 302</a></li>-->
+    <!--									<li><a href="archive.html">Text 303</a></li>-->
+    <!--									<li><a href="archive.html">Text 304</a></li>-->
+    <!--									<li><a href="archive.html">Text 305</a></li>-->
+    <!--								</ul>-->
+    <!--								<ul class="list-unstyled">-->
+    <!--									<li><a href="archive.html">Text 306</a></li>-->
+    <!--									<li><a href="archive.html">Text 307</a></li>-->
+    <!--									<li><a href="archive.html">Text 308</a></li>-->
+    <!--									<li><a href="archive.html">Text 309</a></li>-->
+    <!--									<li><a href="archive.html">Text 310</a></li>-->
+    <!--								</ul>-->
+    <!--								<ul class="list-unstyled">-->
+    <!--									<li><a href="archive.html">Text 311</a></li>-->
+    <!--									<li><a href="archive.html">Text 312</a></li>-->
+    <!--									<li><a href="archive.html#">Text 313</a></li>-->
+    <!--									<li><a href="archive.html#">Text 314</a></li>-->
+    <!--									<li><a href="archive.html">Text 315</a></li>-->
+    <!--								</ul>-->
+    <!--							</div>-->
+    <!--						</div>-->
+    <!--					</li>-->
+    <!--					<li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>-->
+    <!--					<li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>-->
+    <!--				</ul>-->
+    <!--			</div>-->
+    <!--		</div>-->
+    <!--	</nav>-->
+    <!--	轮播-->
+    <div class="header-slide">
+        <div id="owl-demo" class="owl-carousel" >
+
+        </div>
+    </div>
+</header>
+<!-- Header -->
+
+<!-- /////////////////////////////////////////Content -->
+<div id="page-content" class="index-page">
+
+    <div class="container">
+        <div class="row">
+            <div class="featured">
+                <div class="main-vid">
+                    <div class="col-md-6">
+                        <div class="zoom-container">
+                            <div class="zoom-caption">
+                                <span>正在直播</span>
+                                <a href="single.html?playId=5">
+                                    <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                                </a>
+                                <p>你的月亮我的心</p>
+                            </div>
+                            <img src="images/22.jpg" /><!--封面大图-->
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-vid">
+                    <div class="col-md-3">
+                        <div class="zoom-container">
+                            <div class="zoom-caption">
+                                <span>直播中</span>
+                                <a href="single.html?playId=15">
+                                    <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                                </a>
+                                <p>一天拍攝</p>
+                            </div>
+                            <img src="images/31.jpg" />
+                        </div>
+                        <div class="zoom-container">
+                            <div class="zoom-caption">
+                                <span>直播中</span>
+                                <a href="single.html?playId=2">
+                                    <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                                </a>
+                                <p>我是肖三岁</p>
+                            </div>
+                            <img src="images/20.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="zoom-container">
+                            <div class="zoom-caption">
+                                <span>直播中</span>
+                                <a href="single.html?playId=16">
+                                    <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                                </a>
+                                <p>风书画院</p>
+                            </div>
+                            <img src="images/33.jpg" />
+                        </div>
+                        <div class="zoom-container">
+                            <div class="zoom-caption">
+                                <span>直播中</span>
+                                <a href="single.html?playId=10">
+                                    <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                                </a>
+                                <p>只要努力就会有希望</p>
+                            </div>
+                            <img src="images/18.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="main-content" class="col-md-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h2><i class="fa fa-globe"></i> 热播中</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="box">
+
+                    <div class="box-content">
+                        <div class="row" id = "radioList">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- Footer -->
+<footer>
+<a name="bottom"></a>
+    <div class="wrap-footer">
+        <div class="container">
+            <div class="row">
+                <aside class="col-footer col-md-3">
+                    <h2 class="footer-title">关于我们</h2>
+                    <div class="textwidget">公司理念 <br> <br>
+                        做一家有温度公司！</div>
+                </aside>
+                <aside class="col-footer col-md-3 widget_recent_entries">
+                    <h2 class="footer-title">联系我们</h2>
+                    <ul>
+                        <li>公司名称：成都引领名兰科技有限公司</li>
+                        <li>公司电话：028-85553797</li>
+                        <li>地址：四川省成都市天府新区华阳街道天府大道南段888号</li>
+                    </ul>
+                </aside>
+                <aside class="col-footer col-md-3">
+                    <h2 class="footer-title">欢迎投递</h2>
+                    如果您有什么建议，或者意见，欢迎给我们留言，我们的工作人员会在收到您的来信后，第一时间联系您！
+                    <form action="#" method="post">
+                        <input type="text" name="cunstumMessage" value="" size="40" placeholder="您的意见" />
+                        <input type="text" name="cunstumPhone" value="" size="40" placeholder="您的电话" />
+                        <input type="submit" value="提交" class="btn btn-3" />
+                    </form>
+                </aside>
+                <aside class="col-footer col-md-3 wptt_TwitterTweets">
+                    <h2 class="footer-title">感谢有您</h2>
+                    感谢一路陪伴，缘分，让我们相遇！
+                </aside>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 copyright">
+                    <span>Copyright &copy; 2019 名人名兰  All Rights Reserved.蜀ICP备19037081号</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+<!-- JS -->
+<script src="owl-carousel/owl.carousel.js"></script>
+<script>
+
+$("#contract").click(function(){
+
+})
+
+
+</script>
+<script src="js/util.js"></script>
+<script src="js/indexPage.js"></script>
+</body>
+</html>

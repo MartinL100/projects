@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>名人名兰</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+	
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+
+    <link href="css/video-js.min.css" rel="stylesheet">
+    <script src="js/video.min.js"></script>
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery-2.1.1.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+
+    <![endif]-->
+</head>
+
+<body>
+<header>
+	<!--Top-->
+	<nav id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<strong >欢迎来到名人名兰！</strong>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<ul class="list-inline top-link link">
+                        <li><a href="index.html"><i class="fa fa-home"></i> 主页</a></li>
+                        <li><a href="page/login.html"><i class="fa fa-comments"></i> 登录</a></li>
+                        <li><a href="page/register.html"><i class="fa fa-question-circle"></i> 注册</a></li>
+                         <li><a href="page/xieyi.html"><i class="fa fa-question-circle"></i> 家长监护</a></li>
+                         <li id="contract"><a href="#bottom"><i class="fa fa-question-circle"></i> 联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+
+</header>
+<!-- Header -->
+	
+	<!-- /////////////////////////////////////////Content -->
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<div class="row">
+				<div id="main-content" class="col-md-12">
+					<div class="go" >
+                        <div class="go-left">
+                            <video id="example_video_1" class="video-js  vjs-default-skin vjs-big-play-centered" controls preload="auto"style="width: 100%;height: 600px;pointer-events: none"
+                                   poster="images/loading.jpg">
+                                <source src="video/3.mp4" type="video/mp4" id ="player">
+                            </video>
+                        </div>
+                        <div class="go-right" align="center">
+                            <div style="height: 10%;">
+                                <h4 class="talk">聊天室</h4>
+                            </div>
+                            <div class="talkRoom" id="talkRoomDom" align="left">
+
+
+                                </div>
+                            <input  style="height: 10%;color: #cc0000" value="抱歉，您的等級暂不能发言" readonly="readonly">
+                            </div>
+
+                        </div>
+<!--                        <iframe width="100%" height="400" src="video/1.mp4" frameborder="0" allowfullscreen></iframe>-->
+					</div>
+					<div class="line"></div>
+<!--					<h1 class="vid-name"><a href="#" >大型相亲现场</a></h1>-->
+					<div class="vid-tags">
+						<a >阳光</a>
+						<a >活泼</a>
+						<a >善良</a>
+						<a >可爱</a>
+						<a >聪明</a>
+					</div>
+					<div class="line"></div>
+					<div class="box">
+						<div class="box-header">
+							<h2><i class="fa fa-globe"></i> 更多精彩直播</h2>
+						</div>
+						<div class="box-content">
+							<div class="row" id = "morList">
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<!-- Footer -->
+<footer>
+
+    <div class="wrap-footer">
+        <div class="container">
+            <div class="row">
+                <aside class="col-footer col-md-3">
+                    <h2 class="footer-title">关于我们</h2>
+                    <div class="textwidget">公司理念 <br> <br>
+                        做一家有温度的公司！</div>
+                </aside>
+                <aside class="col-footer col-md-3 widget_recent_entries">
+                    <h2 class="footer-title">联系我们</h2>
+                    <ul>
+                        <li>公司名称：成都引领名兰科技有限公司</li>
+                        <li>公司电话：028-85553797</li>
+                        <li>地址：成都市金牛区金青路62号附96号</li>
+                    </ul>
+                </aside>
+                <aside class="col-footer col-md-3">
+                    <h2 class="footer-title">欢迎投递</h2>
+                    如果您有什么建议，或者意见，欢迎给我们留言，我们的工作人员会在收到您的来信后，第一时间联系您！
+                    <form action="#" method="post">
+                        <input type="text" name="cunstumMessage" value="" size="40" placeholder="您的意见" />
+                        <input type="text" name="cunstumPhone" value="" size="40" placeholder="您的电话" />
+                        <input type="submit" value="提交" class="btn btn-3" />
+                    </form>
+                </aside>
+                <aside class="col-footer col-md-3 wptt_TwitterTweets">
+                    <h2 class="footer-title">感谢有您</h2>
+                    感谢一路陪伴，缘分，让我们相遇！
+                </aside>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 copyright">
+                    <span>Copyright &copy; 2019 名人名兰  All Rights Reserved. 蜀ICP备19037081号</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+	
+	<!-- JS -->
+	<script src="owl-carousel/owl.carousel.js"></script>
+	<script src="js/util.js" type="text/javascript"></script>
+<script src="js/single.js" type="text/javascript"></script>
+</body>
+</html>

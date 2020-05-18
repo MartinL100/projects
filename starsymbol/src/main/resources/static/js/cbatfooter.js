@@ -1,11 +1,11 @@
 var netData={
-     tel:"028-8663-3679"
+     tel:"028-8555-3793"
     ,address:"成都市武侯区佳灵路3号2栋12层1205号"
     ,name:"四川星标企业管理有限公司"
-    ,nickName:"星标企服"
+    ,nickName:"星标企管家"
     ,ICPID:" 蜀ICP备19009776号-1"
     ,year:"2020"
-    ,title:"星标企服"
+    ,title:"星标企管家"
     ,imgUrl:"/img/towma.jpg"
 }
 
@@ -32,9 +32,9 @@ var footer = " <div class=\"footerdiv\">\n" +
     "            </div>\n" +
     "            <div>\n" +
     "                <ul>\n" +
-    "                    <li>审计</li>\n" +
-    "                    <li>验资</li>\n" +
-    "                    <li>更多</li>\n" +
+    "                    <li>审计验资</li>\n" +
+    "                    <li style='color: orangered'>行政许可</li>\n" +
+    "                    <li>更多服务</li>\n" +
     "                </ul>\n" +
     "            </div>\n" +
     "\n" +
@@ -84,7 +84,7 @@ document.title=netData.title
 
 
 var header=" <div class=\"index_head_c\">\n" +
-    "        <div class=\"logo\"><img src=\"/img/logo.png\" alt=\"星标企服\"></div>\n" +
+    "        <div class=\"logo\"><img src=\"/img/logo.png\" alt=\"星标企管家\"></div>\n" +
     "        <div class=\"nav\">\n" +
     "            <a href=\"/index.html\" class=\"nav_list\"><i>网站首页</i>\n" +
     "                <label></label>\n" +

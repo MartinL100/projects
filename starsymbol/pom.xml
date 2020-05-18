@@ -132,8 +132,11 @@
             <version>1.5.8.RELEASE</version>
         </dependency>
         <!--日志-->
-
-
+<!--        <dependency>-->
+<!--            <groupId>com.cbat</groupId>-->
+<!--            <artifactId>cbat-monitor</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
