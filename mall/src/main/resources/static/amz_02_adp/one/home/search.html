@@ -16,6 +16,8 @@
 
 		<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="../js/script.js"></script>
+		<script src="../js/changecookie.js"></script>
+		<script src="../js/myjson.js"></script>
 	</head>
     <script>
         function request(params) {
@@ -42,10 +44,10 @@
 		<div class="am-container header">
 			<ul class="message-l">
 				<div class="topMessage">
-					<div class="menu-hd">
-						<a href="#" target="_top" class="h">亲，请登录</a>
-						<a href="#" target="_top">免费注册</a>
-					</div>
+						<div class="menu-hd" name="login" >
+							<a href="login.html" >亲，请登录</a>
+							<a href="register.html" target="_top">免费注册</a>
+						</div>
 				</div>
 			</ul>
 			<ul class="message-r">
@@ -53,7 +55,7 @@
 					<div class="menu-hd"><a href="home.html" target="_top" class="h">商城首页</a></div>
 				</div>
 				<div class="topMessage my-shangcheng">
-					<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+					<div class="menu-hd MyShangcheng"><a href="information.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 				</div>
 				<div class="topMessage mini-cart">
 					<div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span></a></div>
@@ -140,22 +142,18 @@
 					<div class="footer">
 						<div class="footer-hd">
 							<p>
-								<a href="#">律小丫</a>
-								<b>|</b>
-								<a href="#">商城首页</a>
-								<b>|</b>
-								<a href="#">支付宝</a>
-								<b>|</b>
-								<a href="#">物流</a>
+								<a href="home.html">律小丫</a>
+									<b>|</b>
+									<a href="home.html">商城首页</a>
 							</p>
 						</div>
 						<div class="footer-bd">
 							<p>
-								<a href="#">关于律小丫</a>
-								<a href="#">合作伙伴</a>
-								<a href="#">联系我们</a>
-								<a href="#">网站地图</a>
-								<em>© </em>
+								<a href="home.html">关于律小丫</a>
+								<a href="liuyan.html">合作伙伴</a>
+								<a href="liuyan.html">联系我们</a>
+
+								<em>©2020 成都泊涞名汇电子商务有限公司 蜀CP备19019695号</em>
 							</p>
 						</div>
 					</div>
@@ -178,13 +176,15 @@
 
 	</body>
     <script>
-        var request = new XMLHttpRequest();
-        request.open("get", "../json/productinfo.json");
-        request.send(null);
-        request.onload = function () {
-            var json = JSON.parse(request.responseText);
-            searchsth(json,parms)
-        }
+        // var request = new XMLHttpRequest();
+        // request.open("get", "../json/productinfo.json");
+        // request.send(null);
+        // request.onload = function () {
+        //     var json = JSON.parse(request.responseText);
+		var json=productinfo;
+		searchsth(json,parms)
+
+        // }
 
 
     function searchsth(json,parm ) {

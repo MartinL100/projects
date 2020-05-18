@@ -1,0 +1,27 @@
+.cbat-bar{
+    background-color: red;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.cbat-bar-3{
+    width: 30%;
+    float: left;
+}
+
+.cbat-head{
+    font-weight: bolder;
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+.cbat-msg-box{
+    width: 60%;
+    background-color:whitesmoke;
+    margin-left: 20%;
+    font-size: 15px;
+}
+.cbat-msg-content{
+    margin-top: 20px;
+}
