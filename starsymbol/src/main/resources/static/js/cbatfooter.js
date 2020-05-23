@@ -20,7 +20,7 @@ var footer = " <div class=\"footerdiv\">\n" +
     "              <ul>\n" +
     "                  <li>公司注册</li>\n" +
     "                  <li>公司变更</li>\n" +
-    "                  <li>公司剥离</li>\n" +
+    "                  <li>公司转让</li>\n" +
     "              </ul>\n" +
     "          </div>\n" +
     "            <div>\n" +
@@ -102,7 +102,7 @@ var header=" <div class=\"index_head_c\">\n" +
     "            <label></label>\n" +
     "            </a>\n" +
     "            <a href=\"/page/sellCompany.html\"  class=\"nav_list TopActiveMenu ps \" id=\"drop_down322 \">\n" +
-    "            <i>公司剥离</i>\n" +
+    "            <i>公司转让</i>\n" +
     "            <label></label>\n" +
     "            </a>\n" +
     "            <a href=\"/page/delCompany.html\"  class=\"nav_list TopActiveMenu ps \" id=\"drop_down31 \">\n" +
