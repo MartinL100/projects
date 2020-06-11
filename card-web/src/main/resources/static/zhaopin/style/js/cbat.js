@@ -1,5 +1,5 @@
 var footerhtml = "<div class=\"wrapper\">\n" +
-    "        <a href=\"javascript:void(0)\"  rel=\"nofollow\">联系电话：028-8858487</a>\n" +
+    "        <a href=\"javascript:void(0)\"  rel=\"nofollow\">联系电话：028-85553797</a>\n" +
     "        <a href=\"javascript:void(0)\" >联系地址：成都市青羊区光华北三路98号</a>\n" +
     "        <a href=\"javascript:void(0)\"  rel=\"nofollow\">QQ:327481306</a>\n" +
     "        <div class=\"copyright\">&copy;2019-2020 tiao deng <a target=\"_blank\"\n" +
