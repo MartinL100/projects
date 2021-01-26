@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="../layuiadmin/layui/css/layui.css" media="all">
 <link rel="stylesheet" href="../layuiadmin/style/admin.css" media="all">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="../js/initInfo.js"></script>
 <body class="newcrop" style="background-color: moccasin">
 <div id="topbar"><div class="w pos"><div class="bar_left"><h2>成都</h2> <div id="weather" class="weather" style="display: block;"><span class="wt"><img src="" alt=""><em>多云</em>&nbsp;&nbsp;<em class="wTemp">26 ~ 20℃</em></span><span class="today_lv today_lv_0">良</span><div id="weatherbox" class="wb"><div class="air">今日成都空气质量指数(AQI)：<em class="airNum airNum_0"></em><div class="wsource">此功能由<a href="javascript:;" onclick="clickLog(&#39;from=topbar_mojichinalink&#39;);">墨迹天气</a>提供</div></div><div class="dot"></div><div class="wDay"><ul><li><p class="w_time">今天(周三, 实时：25℃)</p><img src="" alt=""><p>26 ~ 20℃<br>多云<br>东南风2级</p></li><li><p class="w_time">明天(周四)</p><img src="" alt=""><p>26 ~ 20℃<br>阵雨<br>微风</p></li><li><p class="w_time">后天(周五)</p><img src="" alt=""><p>26 ~ 21℃<br>阵雨<br>微风</p></li></ul></div><div class="prompt"><b>温馨提示：</b>微凉的天气，要注意及时增减衣物，预防感冒。</div></div></div></div></div></div>
 <div id="1001" style="display:none"></div>
@@ -52,14 +53,14 @@
         <div class="con"><div class="bread"><span class="zp_crumb"><em class="crumb_item" href="javascript:;">成都销售招聘</em>  <span class="crumb_item">&nbsp;&gt;&nbsp;</span><em class="crumb_item" href="javascript:;">天府新区销售招聘</em>  <span class="crumb_item">&nbsp;&gt;&nbsp;</span><em class="crumb_item" href="javascript:;">四河销售招聘</em>  </span></div><div class="operate_bar_mask"> &nbsp;</div><div class="leftCon"><div class="item_con pos_info"> <div class="pos_base_statistics"><span class="pos_base_num pos_base_update"> 更新:  <span>今天</span>  </span><span class="pos_base_num pos_base_browser">浏览:<i id="totalcount">1102</i>人</span><span class="pos_base_num pos_base_apply">申请:<span id="apply_num">52</span>人</span>  </div><div class="pos_base_info"><span class="pos_title"> 网络销售</span>  <span class="pos_salary">8000-12000<span class="font18">元/月</span></span>  </div><span class="pos_name"> </span>  <div class="pos_welfare">  <span class="pos_welfare_item">五险一金</span>  <span class="pos_welfare_item">包住</span>  <span class="pos_welfare_item">周末双休</span>  <span class="pos_welfare_item">年底双薪</span>  <span class="pos_welfare_item">房补</span>  </div>  <div class="pos_base_condition"><span class="item_condition pad_left_none">  招5人 </span><span class="item_condition">学历不限</span><span class="item_condition border_right_None"> 经验不限 </span></div><div class="pos-area"><span class="pos_area_span pos_address"><i class="icon iconfont icon_dingwei"></i>
 
 
-        <span id="area"></span>
+            <span id="area"></span><span style="color: #6b8fd2">查看地图</span>
 
         </div> <div class="pos_operate">
 
             <a class="btn btn-orange btn-large applyJobBtn" style="background: #f85415; " onclick="test()">申请职位</a>
 
 
-            <span class="pos_operate_list">    </span></div><div class="pos_tips">  <span class="sign">提示：</span>刷信誉、淘宝刷钻、YY网络兼职、加YY联系的职位都是骗子！收取费用或押金都可能有欺诈嫌疑，请警惕！  </div>  </div>
+            <span class="pos_operate_list">    </span></div><div class="pos_tips">  <span class="sign">提示：</span>禁止发布刷单、刷钻、优惠券推广类信息，求职者因从事此类工作造成经济损失，不承担任何责任！  </div>  </div>
             <div style="background-color: white;width: 900px" id="jl" hidden>
                 <div>
                     <iframe src="group.html"style="height:600px;width: 400px;" name="obj" frameborder="0"></iframe>
@@ -78,10 +79,12 @@
 
             <div class="subitem_con comp_intro">
             <h2 class="title">公司介绍</h2>
-                <span style="font-size: 18px" id="gs">&nbsp &nbsp &nbsp 成都泊涞名汇电子 </span>
-                <br/><span style="font-size: 18px" >&nbsp &nbsp &nbsp 20-50人 </span>
+                <span style="font-size: 18px" id="gs">成都泊涞名汇电子 </span><img src="../images/nian.png" style="margin-top: -6px;width: 50px"/>
+                <br/><span style="font-size: 14px" id="gstype" >&nbsp &nbsp &nbsp建筑/建材</span>
+                <br/><span style="font-size: 14px" >&nbsp &nbsp &nbsp100-499人 </span>
+
                 <div >
-                    <img src="../images/renzheng1.png"  style="height:95px;width: 300px"/>
+                    <img src="../images/renzheng1.png"  style="width: 300px"/>
                 </div>
 
                 <div id="photo">
@@ -124,21 +127,47 @@
         $(".pos_salary").html(decodeURIComponent(getPara("coin")));
         var gs=decodeURIComponent(getPara("gs"))
          $("#gs").html(gs);
-        if (gs=='成都嘟嘟时代科技有限公司'){
+        if (gs=='成都川盛塑胶有限公司'){
             $("#p1").html(p1_1);
             $("#p2").html(p1_2);
-            $("#photo").html('<img src="../images/gss1.png"   />')
-            $("#area").html(p1_3)
-        }else if(gs=='正辉网络'){
+            $("#photo").html('<img src="../images/gss2.png" style="width: 85%"  />')
+            $("#area").html("成都 - 崇州成都崇州经开区宏业大道北段1355号")
+            $("#gstype").html("&nbsp &nbsp &nbsp建筑/建材")
+
+        }else if(gs=='成都互成网络科技'){
             $("#p1").html(p2_1);
             $("#p2").html(p2_2);
-            $("#photo").html('<img src="../images/gss2.png" style="width: 90%"  />')
+            $("#photo").html('<img src="../images/gss5.png" style="width: 90%"  />')
             $("#area").html(p2_3)
-        }else{
+            $("#area").html("成都 - 青羊 - 天府广场金盾路52号国栋中央商务大厦13楼D座")
+            $("#gstype").html("&nbsp &nbsp &nbsp销售")
+        }else if(gs=='成都市中德汇恒房地产营销策划有限公司'){
             $("#p1").html(p3_1);
-            $("#p2").html(p3_2);  $("#area").html(p3_3)
+            $("#p2").html(p3_2);
+            $("#photo").html('<img src="../images/gss6.png" style="width: 90%"  />')
 
-            $("#photo").html('<img src="../images/gss3.png"  />')
+            $("#area").html("金牛万达甲级写字楼B座")
+            $("#gstype").html("&nbsp &nbsp &nbsp房产/销售")
+        }else if(gs=='四川佳益卫生用品有限公司'){
+            $("#p1").html(p4_1);
+            $("#p2").html(p4_2);
+            $("#photo").html('<img src="../images/gss7.png" style="width: 90%"  />')
+
+            $("#area").html("成都-高新区 成都市高新区天府二街东方天祥大厦B座")
+            $("#gstype").html("&nbsp &nbsp &nbsp其他行业")
+
+        }else if(gs=='成都易万科技有限公司'){
+            $("#p1").html(p5_1);
+            $("#p2").html(p5_2);
+            $("#photo").html('<img src="../images/gss3.png" style="width: 90%"  />')
+            $("#area").html("成都 - 青羊 - 天府广场金盾路52号国栋中央商务大厦13楼D座")
+            $("#gstype").html("&nbsp &nbsp &nbsp科技/销售")
+        }else if(gs=='树高普惠信息技术股份有限公司'){
+            $("#p1").html(p6_1);
+            $("#p2").html(p6_2);
+            $("#photo").html('<img src="../images/gss1.png" style="width: 90%"  />')
+            $("#area").html("成都-金牛 金牛区金牛万达甲级写字楼A座")
+            $("#gstype").html("&nbsp &nbsp &nbsp科技/销售")
         }
 
     });
